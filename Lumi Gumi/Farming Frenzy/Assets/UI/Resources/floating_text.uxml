@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="tooltip" style="flex-grow: 0; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); width: auto; height: auto; flex-basis: initial; align-items: flex-start; flex-shrink: 2; align-self: flex-start; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;);">
+        <ui:Label text="Status" name="text" />
+    </ui:VisualElement>
+</ui:UXML>

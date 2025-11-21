@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db69ec2a93ddae479b55ca3c856ba60, type: 3}
+  m_Name: Clover
+  m_EditorClassIdentifier: 
+  _maturationSprite:
+  - {fileID: 4980261937381015205, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _growthSprite:
+  - {fileID: -8536239421030836411, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _harvestedSprite: {fileID: 0}
+  _cursorSprite: {fileID: -8536239421030836411, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _roleIcon: {fileID: 21300000, guid: 765f15335c9443f4c950e3a99a997c96, type: 3}
+  _isTree: 0
+  _cannotHarvest: 1
+  _goldGenerationFactor: 1
+  _dryoutRate: 0
+  _maturationCycle: 3
+  _fruitingCycle: -1
+  flavorText: Heals plants from goat attacks!
+  power: 2
+  _tier: 1
+  _price: 5
+  _goldGenerated: 0
+  _health: 3
+  _indestructible: 0

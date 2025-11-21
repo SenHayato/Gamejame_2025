@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db69ec2a93ddae479b55ca3c856ba60, type: 3}
+  m_Name: Pumpkin
+  m_EditorClassIdentifier: 
+  _maturationSprite:
+  - {fileID: -1859848445360167127, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _growthSprite:
+  - {fileID: -3085945388132976002, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -2061787868, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -898734505, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _harvestedSprite: {fileID: 1010362334, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _cursorSprite: {fileID: -898734505, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _roleIcon: {fileID: 7675826601332790545, guid: 8f6e6ddb86e217d4eab7f1f75bd7d827, type: 3}
+  _isTree: 0
+  _cannotHarvest: 0
+  _goldGenerationFactor: 1
+  _dryoutRate: 0
+  _maturationCycle: 15
+  _fruitingCycle: 12
+  flavorText: A high-cost, high-producing crop
+  power: 1
+  _tier: 2
+  _price: 60
+  _goldGenerated: 9
+  _health: 25
+  _indestructible: 0

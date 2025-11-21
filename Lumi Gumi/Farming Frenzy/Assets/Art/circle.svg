@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="15.196511mm"
+   height="15.194984mm"
+   viewBox="0 0 15.196511 15.194984"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="circle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="7.2407734"
+     inkscape:cx="7.3196601"
+     inkscape:cy="15.744175"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-56.349105,-26.055957)">
+    <ellipse
+       style="fill:#ffffff;fill-opacity:0.24925748;stroke:#ffffff;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:1.05833;stroke-opacity:1"
+       id="path846"
+       cx="63.947361"
+       cy="33.654213"
+       inkscape:export-filename="/files/RiderProjects/farming-frenzy/Farming Frenzy/Assets/Art/AoeCircle.png"
+       inkscape:export-xdpi="427.8924"
+       inkscape:export-ydpi="427.8924"
+       rx="7.3340001"
+       ry="7.333672" />
+  </g>
+</svg>

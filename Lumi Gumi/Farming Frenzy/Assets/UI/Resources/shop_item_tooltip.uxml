@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="tooltip" style="flex-grow: 1; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.66); position: absolute; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;);">
+        <ui:Label text="Label" name="plant_name" style="-unity-font-style: bold; font-size: 28px;" />
+        <ui:Label text="Too expensive!" name="too_expensive" style="color: rgb(241, 107, 82); display: flex;" />
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; flex-wrap: wrap;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="label" style="flex-grow: 0;">
+                    <ui:VisualElement style="flex-grow: 1;" />
+                    <ui:Label text="Cost:" style="-unity-text-align: middle-left;" />
+                    <ui:Label text="Growth:" style="-unity-text-align: middle-left;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="value_1" style="flex-grow: 0;">
+                    <ui:Label text="XXXG" name="cost" style="color: rgb(241, 107, 82);" />
+                    <ui:Label text="&gt;&gt;&gt;" name="growth" style="color: rgb(251, 246, 75); -unity-font-style: bold;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="spacer_2" style="flex-grow: 0; width: 10px;" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="label_2" style="flex-grow: 0;">
+                    <ui:Label text="Yield:&#10;" style="color: rgb(255, 255, 255);" />
+                    <ui:Label text="Fruiting:" style="color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="value_2" style="flex-grow: 1;">
+                    <ui:Label text="XXXG" name="yield" style="color: rgb(188, 163, 31);" />
+                    <ui:Label text="&gt;&gt;&gt;" name="fruiting" style="-unity-font-style: bold;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label text="Flavour text, such as: lorem ipsum dolor sit amet&#10;" name="flavour" style="color: rgb(219, 209, 209); flex-wrap: wrap; white-space: normal;" />
+        <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
+            <ui:Label text="&lt;u&gt;Power: lorem ipsum dolor sit amet&lt;/u&gt;" name="power" style="min-width: 0; min-height: 0; -unity-font-style: normal; color: rgb(221, 92, 198); white-space: normal; border-left-color: rgb(221, 92, 198); border-right-color: rgb(221, 92, 198); border-top-color: rgb(221, 92, 198); border-bottom-color: rgb(221, 92, 198); border-bottom-width: 0; flex-shrink: 1;" />
+            <ui:VisualElement style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

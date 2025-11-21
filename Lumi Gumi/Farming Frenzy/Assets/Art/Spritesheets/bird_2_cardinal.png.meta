@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 8ebd3772b996ee442be02f444ec7be16
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4011783465497242853
+    second: bird_2_cardinal_0
+  - first:
+      213: -2596899843133685804
+    second: bird_2_cardinal_1
+  - first:
+      213: 6361350301412180076
+    second: bird_2_cardinal_2
+  - first:
+      213: 6242342977059602821
+    second: bird_2_cardinal_3
+  - first:
+      213: -2000043967743991614
+    second: bird_2_cardinal_4
+  - first:
+      213: 6312221332455323216
+    second: bird_2_cardinal_5
+  - first:
+      213: 7534513287037476535
+    second: bird_2_cardinal_6
+  - first:
+      213: -5438677038867170368
+    second: bird_2_cardinal_7
+  - first:
+      213: 154354710206235177
+    second: bird_2_cardinal_8
+  - first:
+      213: 3243206368340829237
+    second: bird_2_cardinal_9
+  - first:
+      213: 4948630500000035249
+    second: bird_2_cardinal_10
+  - first:
+      213: 1071785134266884091
+    second: bird_2_cardinal_11
+  - first:
+      213: 5927816322193112610
+    second: bird_2_cardinal_12
+  - first:
+      213: 3121910856387712849
+    second: bird_2_cardinal_13
+  - first:
+      213: -2399715547863059135
+    second: bird_2_cardinal_14
+  - first:
+      213: 5405177067010778362
+    second: bird_2_cardinal_15
+  - first:
+      213: 2944136452933034731
+    second: bird_2_cardinal_16
+  - first:
+      213: -6327370955066436280
+    second: bird_2_cardinal_17
+  - first:
+      213: 508340104684712902
+    second: bird_2_cardinal_18
+  - first:
+      213: -6318416505098934057
+    second: bird_2_cardinal_19
+  - first:
+      213: -7051397203279805321
+    second: bird_2_cardinal_20
+  - first:
+      213: 623037621188640474
+    second: bird_2_cardinal_21
+  - first:
+      213: 3974736686715085435
+    second: bird_2_cardinal_22
+  - first:
+      213: 2924113888481703915
+    second: bird_2_cardinal_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bird_2_cardinal_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 226
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13504781384358c0800000000000000
+      internalID: -4011783465497242853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 232
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dfbfb40a55f5fbd0800000000000000
+      internalID: -2596899843133685804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 232
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c604f7f256e084850800000000000000
+      internalID: 6361350301412180076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 199
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581cac14dd141a650800000000000000
+      internalID: 6242342977059602821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 200
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0e477ab9a6e34e0800000000000000
+      internalID: -2000043967743991614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 200
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05674a8bbd3899750800000000000000
+      internalID: 6312221332455323216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 167
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be545d3ae7ff8860800000000000000
+      internalID: 7534513287037476535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 168
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbbf3a6c00f584b0800000000000000
+      internalID: -5438677038867170368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 168
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92240478ac0642200800000000000000
+      internalID: 154354710206235177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 136
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5346d3e320f220d20800000000000000
+      internalID: 3243206368340829237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 136
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b17a2588311da440800000000000000
+      internalID: 4948630500000035249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_11
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 130
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff958ba6eebfde00800000000000000
+      internalID: 1071785134266884091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 102
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e3512c985d34250800000000000000
+      internalID: 5927816322193112610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_13
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 102
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157dc6f1261435b20800000000000000
+      internalID: 3121910856387712849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 102
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145f3a76c6f72bed0800000000000000
+      internalID: -2399715547863059135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_15
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 66
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4e34397eb030b40800000000000000
+      internalID: 5405177067010778362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_16
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 67
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be22a57518cabd820800000000000000
+      internalID: 2944136452933034731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 66
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8451425e3a9a038a0800000000000000
+      internalID: -6327370955066436280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 36
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c331d4c1acfd0700800000000000000
+      internalID: 508340104684712902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 37
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8ec9e3aa97058a0800000000000000
+      internalID: -6318416505098934057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 36
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77403508a97642e90800000000000000
+      internalID: -7051397203279805321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 6
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade37ac5a6975a800800000000000000
+      internalID: 623037621188640474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 6
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72ad5f15f9192730800000000000000
+      internalID: 3974736686715085435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_2_cardinal_23
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7fcb5c61a849820800000000000000
+      internalID: 2924113888481703915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bird_2_cardinal_0: -4011783465497242853
+      bird_2_cardinal_1: -2596899843133685804
+      bird_2_cardinal_10: 4948630500000035249
+      bird_2_cardinal_11: 1071785134266884091
+      bird_2_cardinal_12: 5927816322193112610
+      bird_2_cardinal_13: 3121910856387712849
+      bird_2_cardinal_14: -2399715547863059135
+      bird_2_cardinal_15: 5405177067010778362
+      bird_2_cardinal_16: 2944136452933034731
+      bird_2_cardinal_17: -6327370955066436280
+      bird_2_cardinal_18: 508340104684712902
+      bird_2_cardinal_19: -6318416505098934057
+      bird_2_cardinal_2: 6361350301412180076
+      bird_2_cardinal_20: -7051397203279805321
+      bird_2_cardinal_21: 623037621188640474
+      bird_2_cardinal_22: 3974736686715085435
+      bird_2_cardinal_23: 2924113888481703915
+      bird_2_cardinal_3: 6242342977059602821
+      bird_2_cardinal_4: -2000043967743991614
+      bird_2_cardinal_5: 6312221332455323216
+      bird_2_cardinal_6: 7534513287037476535
+      bird_2_cardinal_7: -5438677038867170368
+      bird_2_cardinal_8: 154354710206235177
+      bird_2_cardinal_9: 3243206368340829237
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

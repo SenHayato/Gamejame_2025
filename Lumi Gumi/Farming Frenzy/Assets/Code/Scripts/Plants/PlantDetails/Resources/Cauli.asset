@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db69ec2a93ddae479b55ca3c856ba60, type: 3}
+  m_Name: Cauli
+  m_EditorClassIdentifier: 
+  _maturationSprite:
+  - {fileID: 2703823230014891019, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -4167091428407618903, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _growthSprite:
+  - {fileID: -7898732106725482511, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -2344051083264379774, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -6390899821493003179, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _harvestedSprite: {fileID: -3172894162654648489, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _cursorSprite: {fileID: -6390899821493003179, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _roleIcon: {fileID: 7675826601332790545, guid: 8f6e6ddb86e217d4eab7f1f75bd7d827, type: 3}
+  _isTree: 0
+  _cannotHarvest: 0
+  _goldGenerationFactor: 1
+  _dryoutRate: 0
+  _maturationCycle: 15
+  _fruitingCycle: 12
+  flavorText: A high-cost, high-producing crop
+  power: 1
+  _tier: 2
+  _price: 200
+  _goldGenerated: 27
+  _health: 50
+  _indestructible: 0

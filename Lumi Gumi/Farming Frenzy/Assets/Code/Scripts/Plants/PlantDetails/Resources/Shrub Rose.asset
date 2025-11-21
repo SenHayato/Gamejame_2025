@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db69ec2a93ddae479b55ca3c856ba60, type: 3}
+  m_Name: Shrub Rose
+  m_EditorClassIdentifier: 
+  _maturationSprite:
+  - {fileID: 6863076723932258049, guid: f5e99ddc9f6472f43ac0221139620b28, type: 3}
+  _growthSprite:
+  - {fileID: 6863076723932258049, guid: f5e99ddc9f6472f43ac0221139620b28, type: 3}
+  _harvestedSprite: {fileID: 0}
+  _cursorSprite: {fileID: 6863076723932258049, guid: f5e99ddc9f6472f43ac0221139620b28, type: 3}
+  _roleIcon: {fileID: 21300000, guid: 0293bec47d9a559978fad213038e7b38, type: 3}
+  _isTree: 0
+  _cannotHarvest: 1
+  _goldGenerationFactor: 0
+  _dryoutRate: 0
+  _maturationCycle: 0
+  _fruitingCycle: -1
+  flavorText: Like the blister berry,<br>but far sturdier
+  power: 4
+  _tier: 2
+  _price: 25
+  _goldGenerated: 0
+  _health: 32
+  _indestructible: 0

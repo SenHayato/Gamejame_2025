@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="tooltip" style="flex-grow: 0; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.66); width: auto; height: auto; flex-basis: initial; align-items: flex-start; flex-shrink: 2; align-self: flex-start; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;);">
+        <ui:Label text="Label" name="name" style="-unity-font-style: bold; font-size: 28px;" />
+        <ui:Label text="Status" name="status" />
+        <ui:Label text="Banana modifier" name="banana_modifier" style="color: rgb(235, 167, 205);" />
+        <ui:Label text="Corn Modifier" name="corn_modifier" style="color: rgb(255, 234, 0);" />
+        <ui:Label text="Legume modifier" name="legume_modifier" style="color: rgb(0, 255, 0);" />
+        <ui:Label text="Chili modifier" name="chili_modifier" style="color: rgb(255, 72, 59);" />
+        <ui:Label text="&lt;u&gt;Power: lorem ipsum dolor sit amet&lt;/u&gt;" name="power" style="min-width: 0; min-height: 0; -unity-font-style: normal; color: rgb(221, 92, 198); white-space: normal; border-left-color: rgb(221, 92, 198); border-right-color: rgb(221, 92, 198); border-top-color: rgb(221, 92, 198); border-bottom-color: rgb(221, 92, 198); border-bottom-width: 0; flex-shrink: 1;" />
+    </ui:VisualElement>
+</ui:UXML>
