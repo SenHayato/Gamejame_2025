@@ -185,8 +185,19 @@ namespace Code.Scripts.Player
             if (elt != null) elt.color = _activeCursorBackgroundColor;
         }
 
+        void AddMoney()
+        {
+            //cheatcode
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+            {
+                _money += 10000;
+            }
+        }
+
         private void Update()
         {
+            AddMoney();
+
             lock (this)
             {
                 switch (CurrentlyActiveCursor)
