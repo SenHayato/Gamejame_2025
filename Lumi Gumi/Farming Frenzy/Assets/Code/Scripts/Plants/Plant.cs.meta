@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: ca03c1badeba99445a4f5edfc582e6ce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - aoeCollider: {instanceID: 0}
+  - coinParticle: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

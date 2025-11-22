@@ -33,6 +33,7 @@ namespace Code.Scripts.Plants
         private float MaxHealth => _data._health;
         private GameObject _healthBar;
         private Slider hBarController;
+        [SerializeField] PlayerController _playerController;
         private int SecsToNextStage
         {
             get
@@ -70,6 +71,7 @@ namespace Code.Scripts.Plants
 
         private void Start()
         {
+            _playerController = FindFirstObjectByType<PlayerController>();
             transform.position = new(transform.position.x, transform.position.y, -0.5f);
             transform.rotation = Quaternion.Euler(-60f, 0f, 0f);
         }
@@ -238,6 +240,9 @@ namespace Code.Scripts.Plants
         private void Harvest()
         {
             InventoryManager.Instance.AddItem(_data.name);
+
+            //bisa ditambahkan animasi particle effect buah dari panenan
+            _playerController.SpawnCoinSpark(transform.position, Quaternion.identity);
 
             // 2. (Optional) Show floating text so the player knows they got an item
             // We use the GameManager we saw earlier for this

@@ -17108,6 +17108,7 @@ MonoBehaviour:
   _scytheCursorBackground: {fileID: 997872815}
   _sprayBottleParticleSystem: {fileID: 5184364020215530418, guid: 9324406155a066d4e991f7f3ab9d7aca, type: 3}
   _coinParticles: {fileID: 226337000}
+  _coinSpark: {fileID: 4285927606943646065, guid: 6c582dc9a33436a40ab15abf203a3d52, type: 3}
   lastHarvestablePlant: 0
 --- !u!1 &1950695498
 GameObject:
@@ -18627,6 +18628,8 @@ MonoBehaviour:
   _dayTime: 20
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
+  _time: 0
+  _timeLeft: 0
   _goats: 0
 --- !u!1 &2087830138
 GameObject:
