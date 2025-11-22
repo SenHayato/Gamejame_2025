@@ -237,7 +237,7 @@ namespace Code.Scripts.Plants
 
         private void Harvest()
         {
-            PlayerController.Instance.IncreaseMoney(_data._goldGenerated);
+            PlayerController.Instance.IncreaseMoney(_data._goldGenerated); //Fungsi buat langsung jualan
             _state = GrowthState.Harvested;
             _plantSpriteRenderer.sprite = _data._harvestedSprite;
             _secsSinceGrowth = 0.0f;

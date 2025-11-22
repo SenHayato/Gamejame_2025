@@ -42,7 +42,7 @@ namespace Code.Scripts.Menus
 
             var defaultSprite = Resources.Load<Sprite>("Placeholder");
             
-            var plants = new List<string>
+            var plants = new List<string> //Ngatur banyak list tanaman dalam shop
             {
                 // Tier 1
                 "Tomato", "Corn", "Clover", "Blister Berry",
