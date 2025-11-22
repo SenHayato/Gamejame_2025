@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-
+using Code.Scripts.Managers; 
 namespace Code.Scripts.Plants
 {
     public class Plant : MonoBehaviour
@@ -237,7 +237,12 @@ namespace Code.Scripts.Plants
 
         private void Harvest()
         {
-            PlayerController.Instance.IncreaseMoney(_data._goldGenerated); //Fungsi buat langsung jualan
+            InventoryManager.Instance.AddItem(_data.name);
+
+            // 2. (Optional) Show floating text so the player knows they got an item
+            // We use the GameManager we saw earlier for this
+            GameManager.Instance.ShowFloatingText($"+1 {_data.name}");
+            //PlayerController.Instance.IncreaseMoney(_data._goldGenerated); //Fungsi buat langsung jualan
             _state = GrowthState.Harvested;
             _plantSpriteRenderer.sprite = _data._harvestedSprite;
             _secsSinceGrowth = 0.0f;
