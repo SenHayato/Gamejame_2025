@@ -42,7 +42,7 @@ namespace Code.Scripts.Managers
         [SerializeField] private int _quota;
         [SerializeField] private int _quotaIncreaseRate;
         [SerializeField] private float _timerRate;
-        [SerializeField] private float _dayTime; [Tooltip("Daytime in Seconds")]
+        [SerializeField] private float _dayTime; [Tooltip("Daytime in Seconds")] //default 20
         [SerializeField] private int _enemyDifficulty;
         [SerializeField] private int _enemySpawnFrequency;
         #endregion
@@ -50,8 +50,8 @@ namespace Code.Scripts.Managers
         #region Properties
         public static GameManager Instance;
         public bool Paused { get; private set; }
-        private float _time;
-        private float _timeLeft;
+        [SerializeField] float _time;
+        [SerializeField] float _timeLeft;
         private float _toggleStartTime;
         private bool _quotaClose;
         private Color32 _quotaBaseCol;

@@ -62,6 +62,7 @@ namespace Code.Scripts.Enemy
         private void Start()
         {
             transform.rotation = Quaternion.Euler(-60f,0f,0f);
+
             _audioManager = AudioManager.Instance;
             _gameManager = GameObject.Find("[GameManager]").GetComponent<GameManager>();
             firstUpdate = false;
@@ -176,6 +177,8 @@ namespace Code.Scripts.Enemy
 
         private void RunAway()
         {
+            if (isDeath) return;
+
             lock (this)
             {
                 print("Running away");
@@ -184,7 +187,12 @@ namespace Code.Scripts.Enemy
                 CancelEating();
 
                 _target = _spawnPoint;
-                _agent.SetDestination(_target!.position);
+
+                if (_agent != null)
+                {
+                    _agent.SetDestination(_target!.position);
+                }
+
                 if(playSFX) _audioManager.PlaySFX("goatScared");
                 PlayerController.Instance.EndContextualCursor(PlayerController.CursorState.Spray);
                 _healthBarVisible.SetActive(false);
@@ -196,6 +204,7 @@ namespace Code.Scripts.Enemy
         /// </summary>
         /// <param name="amount"></param>
         /// <returns>True if the animal is now running away</returns>
+        [SerializeField] bool isDeath = false;
         private bool TakeDamage(float amount)
         {
             _health = Math.Max(0, _health - amount);
@@ -203,7 +212,15 @@ namespace Code.Scripts.Enemy
             _healthBarController.value = _health / _maxHealth;
             print($"Goat took {amount} damage! HP = {_health}");
 
-            if (_health > 0) return false;
+            if (_health > 0)
+            {
+                return false;
+            }
+            else
+            {
+                isDeath = true;
+                Destroy(gameObject);
+            }
 
             RunAway();
             return true;
@@ -244,7 +261,7 @@ namespace Code.Scripts.Enemy
             PlayerController.Instance.SprayParticles();
 
             _audioManager.PlaySFX("spray");
-            TakeDamage(_maxHealth);
+            TakeDamage(_maxHealth); //sekali hit ini
         }
         #endregion
 
@@ -267,6 +284,7 @@ namespace Code.Scripts.Enemy
 
         private void CancelEating()
         {
+            if (isDeath) return;
             lock (this)
             {
                 if (_eatingCoroutine != null)
@@ -275,7 +293,10 @@ namespace Code.Scripts.Enemy
                 }
 
                 _eatingCoroutine = null;
-                _agent.isStopped = false;
+                if (_agent != null)
+                {
+                    _agent.isStopped = false;
+                }
             }
         }
 

@@ -17991,10 +17991,12 @@ MonoBehaviour:
   _quota: 100
   _quotaIncreaseRate: 2
   _timerRate: 20
-  _dayTime: 20
+  _dayTime: 2
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
-  _goats: 0
+  _time: 0
+  _timeLeft: 0
+  _goats: 1
 --- !u!1 &2087830138
 GameObject:
   m_ObjectHideFlags: 0
