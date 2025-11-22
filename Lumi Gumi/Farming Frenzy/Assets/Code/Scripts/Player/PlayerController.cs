@@ -28,6 +28,7 @@ namespace Code.Scripts.Player
         [Header("Effects")]
         [SerializeField] private ParticleSystem _sprayBottleParticleSystem;
         [SerializeField] private ParticleSystem _coinParticles;
+        [SerializeField] GameObject _coinSpark;
         #endregion
 
         #region Properties
@@ -249,6 +250,11 @@ namespace Code.Scripts.Player
                     }
                 }
             }
+        }
+
+        public void SpawnCoinSpark(Vector3 spawnPosition, Quaternion spawnRotation)
+        {
+            Instantiate(_coinSpark, spawnPosition, spawnRotation);
         }
 
         public void SprayParticles()

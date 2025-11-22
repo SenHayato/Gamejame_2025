@@ -78,7 +78,7 @@ public class CameraControl : MonoBehaviour
 
         if(scrollData != 0)
         {
-            _attachedCamera.orthographicSize = Mathf.Clamp(_attachedCamera.orthographicSize - Input.GetAxis("Mouse ScrollWheel") * _scrollSpeed, _minZoom, _maxZoom);
+            _attachedCamera.fieldOfView = Mathf.Clamp(_attachedCamera.fieldOfView - Input.GetAxis("Mouse ScrollWheel") * _scrollSpeed, _minZoom, _maxZoom);
             UpdateCameraBounds();
         }
     }
@@ -95,7 +95,7 @@ public class CameraControl : MonoBehaviour
 
         var currentMousePos = Input.mousePosition;
         var difference = Camera.main.ScreenToViewportPoint(_dragOrigin - currentMousePos);
-        var move = new Vector3(difference.x, difference.y, 0) * _dragSpeed * _attachedCamera.orthographicSize;
+        var move = _attachedCamera.orthographicSize * _dragSpeed * new Vector3(difference.x, difference.y, 0);
         transform.Translate(move, Space.World);
         _dragOrigin = currentMousePos;
     }
