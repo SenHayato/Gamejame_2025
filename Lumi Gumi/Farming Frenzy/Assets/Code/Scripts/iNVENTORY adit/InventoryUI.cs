@@ -78,25 +78,16 @@ namespace Code.Scripts.Menus
             Image icon = newItem.transform.Find("Icon").GetComponent<Image>();
             if (data._cursorSprite != null) icon.sprite = data._cursorSprite;
 
-            // 2. Set Name
-            TextMeshProUGUI nameText = newItem.transform.Find("NameText").GetComponent<TextMeshProUGUI>();
-            nameText.text = data.name;
+            
 
             // 3. Set Count
             TextMeshProUGUI countText = newItem.transform.Find("CountText").GetComponent<TextMeshProUGUI>();
             countText.text = $"x{quantity}";
 
 
-            // 5. Setup Sell Button
-            Button sellBtn = newItem.transform.Find("SellButton").GetComponent<Button>();
-            TextMeshProUGUI btnText = sellBtn.GetComponentInChildren<TextMeshProUGUI>();
-            btnText.text = $"Sell ({data._goldGenerated}G)";
+          
 
-            sellBtn.onClick.AddListener(() =>
-            {
-                // Call the manager
-                InventoryManager.Instance.TrySellItem(data.name, data);
-            });
+            
         }
     }
 }
