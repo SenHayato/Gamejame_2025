@@ -154,7 +154,7 @@ namespace Code.Scripts.Enemy
                         break;
                     }
                     case State.Scared when !_target:
-                        RunAway();
+                        RunAway(); //jika enemy harus mati hilangkan RunAway ganti ke Death
                         break;
                     case State.Scared when _agent.remainingDistance > 0.1f && _renderer.isVisible:
                         break;
