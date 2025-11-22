@@ -68,6 +68,11 @@ namespace Code.Scripts.Plants
             _plantSpriteRenderer = GetComponent<SpriteRenderer>();
         }
 
+        private void Start()
+        {
+            transform.rotation = Quaternion.Euler(-60f, 0f, 0f);
+        }
+
         private void Update()
         {
             UpdateState();
@@ -104,6 +109,7 @@ namespace Code.Scripts.Plants
             {
                 case PlayerController.CursorState.Scythe:
                     HarvestPlant();
+                    Destroy(gameObject);
                     break;
                 case PlayerController.CursorState.Shovel when !isContextual: // Prevent accidental digging
                     DigPlant();
