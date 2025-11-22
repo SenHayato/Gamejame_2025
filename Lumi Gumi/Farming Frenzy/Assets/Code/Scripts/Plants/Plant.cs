@@ -216,7 +216,7 @@ namespace Code.Scripts.Plants
                     _state = GrowthState.Mature;
                     break;
                 case GrowthState.Fruited when _secsSinceGrowth >= 3.0:
-                    Harvest();
+                    Harvest(); //fungsi agar tanaman terpanen otomatis
                     break;
                 case GrowthState.Fruited:
                     _secsSinceGrowth += Time.deltaTime;
