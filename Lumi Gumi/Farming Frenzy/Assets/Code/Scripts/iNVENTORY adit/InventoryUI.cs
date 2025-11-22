@@ -86,9 +86,6 @@ namespace Code.Scripts.Menus
             TextMeshProUGUI countText = newItem.transform.Find("CountText").GetComponent<TextMeshProUGUI>();
             countText.text = $"x{quantity}";
 
-            // 4. Set Flavor Text
-            TextMeshProUGUI flavorText = newItem.transform.Find("FlavorText").GetComponent<TextMeshProUGUI>();
-            flavorText.text = string.IsNullOrEmpty(data.flavorText) ? "Tasty!" : data.flavorText;
 
             // 5. Setup Sell Button
             Button sellBtn = newItem.transform.Find("SellButton").GetComponent<Button>();
