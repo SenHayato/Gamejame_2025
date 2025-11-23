@@ -6743,7 +6743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Beans \n& Debt"
+  m_text: "Bean \n& Debt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8609f7b832cfa342ae13bc9615ad7e6, type: 2}
   m_sharedMaterial: {fileID: 1731547507395731691, guid: b8609f7b832cfa342ae13bc9615ad7e6, type: 2}
