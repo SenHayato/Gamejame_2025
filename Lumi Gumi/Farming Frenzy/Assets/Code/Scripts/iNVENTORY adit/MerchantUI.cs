@@ -101,7 +101,7 @@ namespace Code.Scripts.Menus
                 // If sold successfully, refresh the list immediately so the count updates
                 if (sold)
                 {
-                    AudioManager.Instance.PlaySFX("Coins);
+                    AudioManager.Instance.PlaySFX("Coins");
                     RefreshMerchantUI();
                 }
             });
