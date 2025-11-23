@@ -16891,6 +16891,10 @@ PrefabInstance:
       value: '[EnemySpawnManager]'
       objectReference: {fileID: 0}
     - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 6482053202644296819, guid: a175a599898013d489d4a2d08441e9fd, type: 3}
+    - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: _spawnPositions
       value: 
       objectReference: {fileID: 762213175}
@@ -30865,7 +30869,7 @@ MonoBehaviour:
   _quota: 100
   _quotaIncreaseRate: 2
   _timerRate: 20
-  _dayTime: 20
+  _dayTime: 10
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
   _successDialogue: {fileID: 390658846}
@@ -30873,7 +30877,7 @@ MonoBehaviour:
   _levelPopup: {fileID: 343739762}
   _time: 0
   _timeLeft: 0
-  _goats: 0
+  _goats: 1
 --- !u!1 &2083108235
 GameObject:
   m_ObjectHideFlags: 0

@@ -132,6 +132,7 @@ MonoBehaviour:
   _healthBar: {fileID: 5087120414197451017}
   _healthBarController: {fileID: 953575594434476295}
   _healthBarVisible: {fileID: 5086546276717951098}
+  isDeath: 0
 --- !u!95 &6591600945038376290
 Animator:
   serializedVersion: 7

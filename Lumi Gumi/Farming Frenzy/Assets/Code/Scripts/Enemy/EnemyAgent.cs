@@ -98,68 +98,83 @@ namespace Code.Scripts.Enemy
         private void Update()
         {
 
-            if(!firstUpdate) {
-                if(_gameManager._goats > 10) {
-                    float randNum = Random.Range(1,_gameManager._goats+1);
-                    if(randNum > 10) playSFX = false;
+            if (!firstUpdate)
+            {
+                if (_gameManager._goats > 10)
+                {
+                    float randNum = Random.Range(1, _gameManager._goats + 1);
+                    if (randNum > 10) playSFX = false;
                     else playSFX = true;
                 }
-                else {
+                else
+                {
                     playSFX = true;
                 }
                 firstUpdate = true;
             }
             var direction = _agent.velocity.normalized;
             _agentAnimator.SetFloat(X, direction.x);
+            if (_agentAnimator.GetFloat(X) > 0)
+            {
+                _spriteRenderer.flipX = false;
+            }
+            else
+            {
+                _spriteRenderer.flipX = true;
+            }
             _agentAnimator.SetFloat(Y, direction.y);
             _agentAnimator.SetBool(Movement, direction.magnitude > 0);
             _spriteRenderer.sortingOrder = 10000 - Mathf.CeilToInt(transform.position.y);
 
-            if(playSFX){
+            if (playSFX)
+            {
                 _timer += Time.deltaTime;
-                if(_timer > _timeToNextPlay) {
+                if (_timer > _timeToNextPlay)
+                {
                     _audioManager.PlayRandomGoatNoise();
-                    _timeToNextPlay = Random.Range(2,9);
+                    _timeToNextPlay = Random.Range(2, 9);
                     _timer = 0f;
                 }
             }
 
-            hbCanvas.transform.position = gameObject.transform.position + new Vector3(0,0.85f,0);
-            _healthBar.transform.localScale = new Vector2(0.001f,0.001f);
+            hbCanvas.transform.position = gameObject.transform.position + new Vector3(0, 0.85f, 0);
+            _healthBar.transform.localScale = new Vector2(0.001f, 0.001f);
 
             lock (this)
             {
                 switch (_currentState)
                 {
                     case State.Hungry:
-                    {
-                        AcquirePlantTarget();
-                        if (!_target)
                         {
-                            RunAway();
-                        } else
-                        {
-                            _agent.SetDestination(_target.position);
-                            _currentState = State.Eating;
-                        }
+                            AcquirePlantTarget();
+                            if (!_target)
+                            {
+                                RunAway();
+                            }
+                            else
+                            {
+                                _agent.SetDestination(_target.position);
+                                _currentState = State.Eating;
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case State.Eating:
-                    {
-                        if(!_target)
                         {
-                            _currentState = State.Hungry;
-                        }
+                            if (!_target)
+                            {
+                                _currentState = State.Hungry;
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                     case State.Scared when !_target:
                         RunAway(); //jika enemy harus mati hilangkan RunAway ganti ke Death
                         break;
                     case State.Scared when _agent.remainingDistance > 0.1f && _renderer.isVisible:
                         break;
                     case State.Scared:
+                        _agentAnimator.SetBool("IsAttacking", false);
                         _agent.isStopped = true;
                         Destroy(gameObject);
                         break;
@@ -178,7 +193,6 @@ namespace Code.Scripts.Enemy
         private void RunAway()
         {
             if (isDeath) return;
-
             lock (this)
             {
                 print("Running away");
