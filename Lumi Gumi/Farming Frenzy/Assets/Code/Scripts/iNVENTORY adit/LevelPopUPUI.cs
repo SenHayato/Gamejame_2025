@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Needed for loading scenes
+using UnityEngine.SceneManagement;
 
 namespace Code.Scripts.Menus
 {
@@ -19,10 +19,10 @@ namespace Code.Scripts.Menus
         [SerializeField] private Sprite _starFilled;
         [SerializeField] private Sprite _starEmpty;
 
-        [Header("Button")]
-        [SerializeField] private Button _continueButton;
+        [Header("Buttons")]
+        [SerializeField] private Button _mainMenuButton; // Used for both Win and Loss
+        [SerializeField] private Button _restartButton;  // Only visible on Loss
 
-        // Change this string in the Inspector if your menu scene is named differently!
         [SerializeField] private string _mainMenuSceneName = "MainMenu";
 
         public void ShowPopup(bool isWin, int debtLeft, int totalHarvested, float timeLeft, float totalTime)
@@ -50,20 +50,15 @@ namespace Code.Scripts.Menus
             string totalTimeStr = FormatTime(totalTime);
             _timeText.text = $"{timeStr} / {totalTimeStr}";
 
-            // 3. Calculate Stars
+            // 3. Calculate Stars (0 stars if lost)
             int starCount = 0;
 
             if (isWin)
             {
                 starCount = 1;
                 float percentageLeft = timeLeft / totalTime;
-
                 if (percentageLeft > 0.2f) starCount++;
                 if (percentageLeft > 0.5f) starCount++;
-            }
-            else
-            {
-                starCount = 0;
             }
 
             // 4. Update Star Visuals
@@ -73,16 +68,37 @@ namespace Code.Scripts.Menus
                 starImg.sprite = (i < starCount) ? _starFilled : _starEmpty;
             }
 
-            // 5. Setup Continue Button (Return to Main Menu)
-            _continueButton.onClick.RemoveAllListeners();
-            _continueButton.onClick.AddListener(() =>
-            {
-                // Unpause the game so the main menu animations work
-                Time.timeScale = 1f;
+            // 5. Button Logic
+            SetupButtons(isWin);
+        }
 
-                // Load the Main Menu Scene
+        private void SetupButtons(bool isWin)
+        {
+            // --- MAIN MENU BUTTON (Always visible) ---
+            _mainMenuButton.gameObject.SetActive(true);
+            _mainMenuButton.onClick.RemoveAllListeners();
+            _mainMenuButton.onClick.AddListener(() =>
+            {
+                Time.timeScale = 1f;
                 SceneManager.LoadScene(_mainMenuSceneName);
             });
+
+            // --- RESTART BUTTON (Only visible if Failed) ---
+            if (isWin)
+            {
+                _restartButton.gameObject.SetActive(false); // Hide on Win
+            }
+            else
+            {
+                _restartButton.gameObject.SetActive(true); // Show on Loss
+                _restartButton.onClick.RemoveAllListeners();
+                _restartButton.onClick.AddListener(() =>
+                {
+                    Time.timeScale = 1f;
+                    // Reload the current active scene
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                });
+            }
         }
 
         private string FormatTime(float timeInSeconds)
