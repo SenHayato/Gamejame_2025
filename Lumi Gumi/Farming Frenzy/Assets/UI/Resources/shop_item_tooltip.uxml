@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="tooltip" style="flex-grow: 1; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.66); position: absolute; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;); right: auto; bottom: 0; left: 300px;">
-        <ui:Label text="Label" name="plant_name" style="-unity-font-style: bold; font-size: 28px;" />
-        <ui:Label text="Too expensive!" name="too_expensive" style="color: rgb(241, 107, 82); display: flex;" />
+    <ui:VisualElement name="tooltip" style="flex-grow: 1; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.66); position: absolute; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&apos;); right: auto; bottom: 0; left: 300px;">
+        <ui:Label text="Label" name="plant_name" style="-unity-font-style: bold; font-size: 28px; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/Enchanted%20Land.otf?fileID=12800000&amp;guid=843b3ee75361eb74d99fb43a7b7a0c00&amp;type=3#Enchanted Land&quot;);" />
+        <ui:Label text="Too expensive!" name="too_expensive" style="color: rgb(241, 107, 82); display: flex; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/Enchanted%20Land.otf?fileID=12800000&amp;guid=843b3ee75361eb74d99fb43a7b7a0c00&amp;type=3#Enchanted Land&quot;);" />
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; flex-wrap: wrap;">
             <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
                 <ui:VisualElement name="label" style="flex-grow: 0;">
@@ -26,7 +26,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Label text="Flavour text, such as: lorem ipsum dolor sit amet&#10;" name="flavour" style="color: rgb(219, 209, 209); flex-wrap: wrap; white-space: normal;" />
+        <ui:Label text="Flavour text, such as: lorem ipsum dolor sit amet&#10;" name="flavour" style="color: rgb(219, 209, 209); flex-wrap: wrap; white-space: normal; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/times.ttf?fileID=12800000&amp;guid=7be20e5e509d22e40afa451bb14f85b4&amp;type=3#times&quot;);" />
         <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
             <ui:Label text="&lt;u&gt;Power: lorem ipsum dolor sit amet&lt;/u&gt;" name="power" style="min-width: 0; min-height: 0; -unity-font-style: normal; color: rgb(221, 92, 198); white-space: normal; border-left-color: rgb(221, 92, 198); border-right-color: rgb(221, 92, 198); border-top-color: rgb(221, 92, 198); border-bottom-color: rgb(221, 92, 198); border-bottom-width: 0; flex-shrink: 1;" />
             <ui:VisualElement style="flex-grow: 1;" />
