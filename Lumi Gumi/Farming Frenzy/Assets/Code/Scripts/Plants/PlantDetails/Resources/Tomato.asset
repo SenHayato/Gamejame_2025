@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 3566356438213040338, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   - {fileID: 1881030146588201190, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   _harvestedSprite: {fileID: -1817192974506506566, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  _cursorSprite: {fileID: 1881030146588201190, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _cursorSprite: {fileID: -3962807554240710951, guid: 0f4d1593d2a310e4ea44065a4dfcdaca, type: 3}
   _roleIcon: {fileID: 7675826601332790545, guid: 8f6e6ddb86e217d4eab7f1f75bd7d827, type: 3}
   _isTree: 0
   _cannotHarvest: 0

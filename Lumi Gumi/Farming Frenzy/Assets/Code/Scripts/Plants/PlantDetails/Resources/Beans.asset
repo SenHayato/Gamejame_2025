@@ -18,8 +18,8 @@ MonoBehaviour:
   _growthSprite:
   - {fileID: -6567478624175301841, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   - {fileID: 7713437065039133689, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  _harvestedSprite: {fileID: -4244828190509259554, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  _cursorSprite: {fileID: 7713437065039133689, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _harvestedSprite: {fileID: -1043762982736934151, guid: 5b5ad4630c3e99e4093fff18169005fb, type: 3}
+  _cursorSprite: {fileID: -1043762982736934151, guid: 5b5ad4630c3e99e4093fff18169005fb, type: 3}
   _roleIcon: {fileID: 21300000, guid: 765f15335c9443f4c950e3a99a997c96, type: 3}
   _isTree: 0
   _cannotHarvest: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   _maturationCycle: 10
   _fruitingCycle: 12
   flavorText: "Premium\u2122 version of the clover"
-  power: 5
+  power: 1
   _tier: 2
   _price: 40
   _goldGenerated: 2
