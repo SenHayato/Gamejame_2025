@@ -7156,7 +7156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 155.6, y: -60.5}
+  m_AnchoredPosition: {x: 155.60004, y: -60.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286214185
@@ -14557,7 +14557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50.00006, y: 50.00006}
+  m_AnchoredPosition: {x: -50, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &546819292 stripped
@@ -16891,6 +16891,10 @@ PrefabInstance:
       value: '[EnemySpawnManager]'
       objectReference: {fileID: 0}
     - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 6482053202644296819, guid: a175a599898013d489d4a2d08441e9fd, type: 3}
+    - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: _spawnPositions
       value: 
       objectReference: {fileID: 762213175}
@@ -17308,7 +17312,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -490, y: 51}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 55, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &776276068
 CanvasRenderer:
@@ -21360,7 +21364,7 @@ MonoBehaviour:
   - speakerName: Annecat
     dialogueText: I'm sorry, i don't have enough money for it. Please give me some
       more time.
-    speakerImageA: {fileID: 511082970857358728, guid: c5519abff8651d04fa5404486404ebad, type: 3}
+    speakerImageA: {fileID: 7152930139536384079, guid: 36b8674ca54b1704590a3bbb8c432f99, type: 3}
     speakerImageB: {fileID: 0}
     isSpeakerAActive: 1
   - speakerName: Debt Collector
@@ -28408,7 +28412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 398.1, y: -26.600006}
+  m_AnchoredPosition: {x: 398.1001, y: -26.599976}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885112431
@@ -30865,7 +30869,7 @@ MonoBehaviour:
   _quota: 100
   _quotaIncreaseRate: 2
   _timerRate: 20
-  _dayTime: 20
+  _dayTime: 10
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
   _successDialogue: {fileID: 390658846}
@@ -30873,7 +30877,7 @@ MonoBehaviour:
   _levelPopup: {fileID: 343739762}
   _time: 0
   _timeLeft: 0
-  _goats: 0
+  _goats: 1
 --- !u!1 &2083108235
 GameObject:
   m_ObjectHideFlags: 0
@@ -32103,7 +32107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 229, y: -81.4}
+  m_AnchoredPosition: {x: 229, y: -81.399994}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &5524216680770974435
