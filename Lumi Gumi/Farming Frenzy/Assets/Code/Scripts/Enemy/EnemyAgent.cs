@@ -174,7 +174,7 @@ namespace Code.Scripts.Enemy
                     case State.Scared when _agent.remainingDistance > 0.1f && _renderer.isVisible:
                         break;
                     case State.Scared:
-                        _agentAnimator.SetBool("IsAttacking", false);
+                        //_agentAnimator.SetBool("IsAttacking", false);
                         _agent.isStopped = true;
                         Destroy(gameObject);
                         break;
