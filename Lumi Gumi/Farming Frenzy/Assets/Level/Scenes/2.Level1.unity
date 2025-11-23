@@ -8776,7 +8776,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 739427646}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739427648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -10923,7 +10923,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 611766535}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021703413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -11781,7 +11781,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1056478978}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013016828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -18089,13 +18089,15 @@ MonoBehaviour:
   _dayNightAnimator: {fileID: 697990103}
   _quotaButtonImg: {fileID: 643936257}
   _floatingTextPrefab: {fileID: 7044524255995285942, guid: 5bb772986ba87219e83c41ba410f0301, type: 3}
-  _successDialogue: {fileID: 0}
   _quota: 100
   _quotaIncreaseRate: 2
   _timerRate: 20
-  _dayTime: 2
+  _dayTime: 50
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
+  _successDialogue: {fileID: 0}
+  _failedDialogue: {fileID: 0}
+  _levelPopup: {fileID: 0}
   _time: 0
   _timeLeft: 0
   _goats: 1
@@ -18832,7 +18834,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6409075220635336159}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647939948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

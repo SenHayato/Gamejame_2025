@@ -45,13 +45,13 @@ namespace Code.Scripts.Menus
             var plants = new List<string> //Ngatur banyak list tanaman dalam shop
             {
                 // Tier 1
-                "Tomato", "Corn", "Clover", "Blister Berry",
+                "Tomato", "Corn",// "Clover", "Blister Berry",
                 
                 // Tier 2
-                "Pumpkin", "Banana", "Beans", "Shrub Rose", // "Scarecrow", "Marigold",
+                 "Banana", "Beans", //"Shrub Rose","Pumpkin", // "Scarecrow", "Marigold",
 
                 // Tier 3
-                "Cauli", "Chili",
+                // "Chili", // "Cauli",
             };
 
             foreach (var plant in plants)
