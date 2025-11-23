@@ -2162,7 +2162,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6936011914326990301, guid: 1aa7a43ee54e76f41bb3d0f2c8027585, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: b52a415a8f0a2b049b538f6133f10da3, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2ef865cb9bb8e57439ef21c0aa287531, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2260,7 +2260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d216562b57f67a9468ce270f00b3fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicSounds: []
+  _musicSounds:
+  - {fileID: 8300000, guid: df22fb5f12e13194f90bde3e19ad14b6, type: 3}
   _sfxSounds:
   - {fileID: 8300000, guid: 1d3eb7a10803dca4f8141e3940a40d4b, type: 3}
   - {fileID: 8300000, guid: 376e3322d48c96243a697da76ade2f4a, type: 3}
@@ -2278,6 +2279,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d75694b525671a749bc71030192c71da, type: 3}
   - {fileID: 8300000, guid: 94d99ab613e865a4481d75130731409b, type: 3}
   - {fileID: 8300000, guid: 8de1457fc86ab8c41a4228d5893b1b8a, type: 3}
+  - {fileID: 8300000, guid: 43a3600832cd08f49905840d7d213764, type: 3}
   _musicSource: {fileID: 215684463}
   _sfxSource: {fileID: 215684462}
   audioMixer: {fileID: 24100000, guid: 1aa7a43ee54e76f41bb3d0f2c8027585, type: 2}
@@ -3405,9 +3407,21 @@ MonoBehaviour:
           m_StringArgument: Press
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 215684464}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1457690595}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: StartButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3416,18 +3430,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 3.LevelMenu
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 393232808}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &360501735
 MonoBehaviour:
@@ -6429,7 +6431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Farming Frenzy
+  m_text: Beans & Debt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8609f7b832cfa342ae13bc9615ad7e6, type: 2}
   m_sharedMaterial: {fileID: 1731547507395731691, guid: b8609f7b832cfa342ae13bc9615ad7e6, type: 2}
@@ -8518,7 +8520,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 330}
-  m_SizeDelta: {x: 489.0745, y: 50}
+  m_SizeDelta: {x: 732.4337, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132370393
 MonoBehaviour:
@@ -8540,7 +8542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Farming Frenzy
+  m_text: Beans & Debt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8609f7b832cfa342ae13bc9615ad7e6, type: 2}
   m_sharedMaterial: {fileID: 1731547507395731691, guid: b8609f7b832cfa342ae13bc9615ad7e6, type: 2}
@@ -14159,6 +14161,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 215684464}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -37796,6 +37810,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Press
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 215684464}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2108502740

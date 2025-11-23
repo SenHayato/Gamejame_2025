@@ -17,6 +17,11 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(LoadLevelAsync(levelName));
     }
 
+    public void StartButton(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void RestartLevel(string levelName)
     {
         AudioManager.Instance.RestartMusic();

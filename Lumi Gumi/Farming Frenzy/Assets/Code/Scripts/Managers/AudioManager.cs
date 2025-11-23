@@ -113,6 +113,11 @@ public class AudioManager : MonoBehaviour
         _musicSource.PlayOneShot(sound);
     }
 
+    public void ButtonSFX()
+    {
+        AudioManager.Instance.PlaySFX("Button");
+    }
+
     public void RestartMusic() {
         _musicSource.Stop();
         _musicSource.Play();
@@ -146,7 +151,7 @@ public class AudioManager : MonoBehaviour
         }
         _sfxSource.PlayOneShot(sound);
     }
-        public void ToggleMusic()
+    public void ToggleMusic()
     {
         _musicSource.mute = !_musicSource.mute;
     }

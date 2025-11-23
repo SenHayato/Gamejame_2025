@@ -314,7 +314,7 @@ namespace Code.Scripts.Managers
             amount = Math.Min(amount, diff);
             if (amount == 0 || !PlayerController.Instance.TryPurchase(amount)) return;
 
-            AudioManager.Instance.PlaySFX("kaching");
+            AudioManager.Instance.PlaySFX("Coins");
             _quotaButton.GetComponent<Animator>().Play("QuotaClick");
 
             _currentQuotaPayment += amount;
