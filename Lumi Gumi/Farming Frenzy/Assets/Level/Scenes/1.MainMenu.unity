@@ -4327,10 +4327,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Adistian Rahman Maulana
+  m_text: Adistian Rahman Maulana - Lead & Game Programmer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
-  m_sharedMaterial: {fileID: 6343082611954048013, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
+  m_sharedMaterial: {fileID: 6172566382145293265, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4364,7 +4364,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 3.12
+  m_characterSpacing: 0
   m_wordSpacing: 30.35
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -6079,10 +6079,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: M. Habibie Nugraha
+  m_text: M. Habibie Nugraha - 2D Game Artist
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
-  m_sharedMaterial: {fileID: 6343082611954048013, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
+  m_sharedMaterial: {fileID: 6172566382145293265, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6116,7 +6116,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 3.12
+  m_characterSpacing: 0
   m_wordSpacing: 30.35
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -9132,10 +9132,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Muhammad Fadhil Hersaputra
+  m_text: Muhammad Fadhil Hersaputra - Game Designer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
-  m_sharedMaterial: {fileID: 6343082611954048013, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
+  m_sharedMaterial: {fileID: 6172566382145293265, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9169,7 +9169,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 3.12
+  m_characterSpacing: 0
   m_wordSpacing: 30.35
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -9568,10 +9568,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ardan
+  m_text: Ardan - 2D Game Artist
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
-  m_sharedMaterial: {fileID: 6343082611954048013, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
+  m_sharedMaterial: {fileID: 6172566382145293265, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9605,7 +9605,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 3.12
+  m_characterSpacing: 0
   m_wordSpacing: 30.35
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -37622,12 +37622,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Muhammad Tegar Pratama
+  m_text: 'Muhammad Tegar Pratama - Game Programmer
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
-  m_sharedMaterial: {fileID: 6343082611954048013, guid: f6c58b2b6a513554196ef65e352ba7ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
+  m_sharedMaterial: {fileID: 6172566382145293265, guid: c3977775a4f9ddb488a58096bb911054, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -37661,7 +37661,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 3.12
+  m_characterSpacing: 0
   m_wordSpacing: 30.35
   m_lineSpacing: 0
   m_lineSpacingMax: 0
