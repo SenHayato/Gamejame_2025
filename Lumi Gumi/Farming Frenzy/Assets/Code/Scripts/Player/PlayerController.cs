@@ -29,7 +29,7 @@ namespace Code.Scripts.Player
         [Header("Effects")]
         [SerializeField] private ParticleSystem _sprayBottleParticleSystem;
         [SerializeField] private ParticleSystem _coinParticles;
-        [SerializeField] GameObject _coinSpark;
+        [SerializeField] GameObject _coinSpark; //Cuma untuk tanaman saat ditanam
         #endregion
 
         #region Properties
