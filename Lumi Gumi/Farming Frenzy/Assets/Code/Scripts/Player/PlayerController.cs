@@ -25,6 +25,7 @@ namespace Code.Scripts.Player
         [SerializeField] private Image _defaultCursorBackground;
         [SerializeField] private Image _shovelCursorBackground;
         [SerializeField] private Image _scytheCursorBackground;
+        [SerializeField] private Image _swordCursorBackground;
         [Header("Effects")]
         [SerializeField] private ParticleSystem _sprayBottleParticleSystem;
         [SerializeField] private ParticleSystem _coinParticles;
@@ -170,6 +171,7 @@ namespace Code.Scripts.Player
             _defaultCursorBackground.color = _defaultCursorBackgroundColor;
             _shovelCursorBackground.color = _defaultCursorBackgroundColor;
             _scytheCursorBackground.color = _defaultCursorBackgroundColor;
+            _swordCursorBackground.color = _defaultCursorBackgroundColor;
         }
 
         private void SetupBackgrounds()
