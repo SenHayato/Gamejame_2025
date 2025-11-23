@@ -18476,6 +18476,7 @@ MonoBehaviour:
   _defaultCursorBackground: {fileID: 6409075220635336161}
   _shovelCursorBackground: {fileID: 1116738242}
   _scytheCursorBackground: {fileID: 997872815}
+  _swordCursorBackground: {fileID: 0}
   _sprayBottleParticleSystem: {fileID: 5184364020215530418, guid: 9324406155a066d4e991f7f3ab9d7aca, type: 3}
   _coinParticles: {fileID: 226337000}
   _coinSpark: {fileID: 4285927606943646065, guid: 6c582dc9a33436a40ab15abf203a3d52, type: 3}
