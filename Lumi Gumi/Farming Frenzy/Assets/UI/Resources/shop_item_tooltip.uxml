@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="tooltip" style="flex-grow: 1; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.66); position: absolute; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;);">
+    <ui:VisualElement name="tooltip" style="flex-grow: 1; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.66); position: absolute; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;); right: auto; bottom: 0; left: 0;">
         <ui:Label text="Label" name="plant_name" style="-unity-font-style: bold; font-size: 28px;" />
         <ui:Label text="Too expensive!" name="too_expensive" style="color: rgb(241, 107, 82); display: flex;" />
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; flex-wrap: wrap;">
