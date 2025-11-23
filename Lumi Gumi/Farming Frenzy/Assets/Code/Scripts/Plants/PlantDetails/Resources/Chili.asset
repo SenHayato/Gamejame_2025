@@ -31,7 +31,7 @@ MonoBehaviour:
   flavorText: Doubles nearby defensive<br>plant damage
   power: 7
   _tier: 3
-  _price: 300
-  _goldGenerated: 3
+  _price: 10
+  _goldGenerated: 1111111111
   _health: 30
   _indestructible: 0
