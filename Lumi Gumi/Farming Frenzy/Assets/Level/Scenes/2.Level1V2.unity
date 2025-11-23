@@ -30865,7 +30865,7 @@ MonoBehaviour:
   _quota: 100
   _quotaIncreaseRate: 2
   _timerRate: 20
-  _dayTime: 11
+  _dayTime: 20
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
   _successDialogue: {fileID: 390658846}
