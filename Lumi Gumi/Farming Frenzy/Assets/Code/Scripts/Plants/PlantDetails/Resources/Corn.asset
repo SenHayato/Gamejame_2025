@@ -32,7 +32,7 @@ MonoBehaviour:
   flavorText: Great planted together;<br>avoid planting alone!
   power: 1
   _tier: 1
-  _price: 20
-  _goldGenerated: 4
+  _price: 6
+  _goldGenerated: 9
   _health: 10
   _indestructible: 0

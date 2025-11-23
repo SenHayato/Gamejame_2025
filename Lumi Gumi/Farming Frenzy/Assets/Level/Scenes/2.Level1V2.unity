@@ -30611,8 +30611,8 @@ MonoBehaviour:
   _floatingTextPrefab: {fileID: 7044524255995285942, guid: 5bb772986ba87219e83c41ba410f0301, type: 3}
   _quota: 100
   _quotaIncreaseRate: 2
-  _timerRate: 11
-  _dayTime: 11
+  _timerRate: 20
+  _dayTime: 20
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
   _successDialogue: {fileID: 390658846}

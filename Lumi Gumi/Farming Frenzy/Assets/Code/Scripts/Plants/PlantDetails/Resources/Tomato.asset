@@ -30,7 +30,7 @@ MonoBehaviour:
   flavorText: A versatile early-game crop
   power: 1
   _tier: 1
-  _price: 14
-  _goldGenerated: 3
+  _price: 3
+  _goldGenerated: 5
   _health: 10
   _indestructible: 0

@@ -27,10 +27,10 @@ MonoBehaviour:
   _dryoutRate: 0
   _maturationCycle: 10
   _fruitingCycle: 12
-  flavorText: "Premium\u2122 version of the clover"
+  flavorText: Endgame plant
   power: 1
   _tier: 2
-  _price: 40
-  _goldGenerated: 2
+  _price: 20
+  _goldGenerated: 31
   _health: 10
   _indestructible: 0
