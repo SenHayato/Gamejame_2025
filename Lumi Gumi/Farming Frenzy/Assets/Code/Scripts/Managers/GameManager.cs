@@ -37,7 +37,8 @@ namespace Code.Scripts.Managers
         [SerializeField] private Animator _dayNightAnimator;
         [SerializeField] private Image _quotaButtonImg;
         [SerializeField] private GameObject _floatingTextPrefab;
-        
+        [Header("Events")]
+        [SerializeField] private NPCInteraction _successDialogue; // Drag your Boss/NPC here
         [Header("Game Options")]
         [SerializeField] private int _quota;
         [SerializeField] private int _quotaIncreaseRate;
@@ -326,12 +327,12 @@ namespace Code.Scripts.Managers
             {
                 if (PlayerController.Instance.Money >= diff)
                 {
-                    // Just pay for them and carry on
+                    // Just pay for them and carry on (Auto-Pay)
                     PlayerController.Instance.Purchase(diff);
                 }
                 else
                 {
-                    // Not enough to pay - game over!
+                    // --- GAME OVER LOGIC ---
                     Time.timeScale = 0f;
                     AudioManager.Instance.ToggleSFX();
                     AudioManager.Instance.ToggleSFX();
@@ -345,16 +346,26 @@ namespace Code.Scripts.Managers
                 }
             }
 
+            // --- SUCCESS / WEEK PASSED LOGIC ---
+
             // Setup next quota
             _quota *= _quotaIncreaseRate;
             _quotaPaymentLeft = _quota;
             _currentQuotaPayment = 0;
-            _timeLeft = _dayTime*7;
+            _timeLeft = _dayTime * 7;
             _quotaClose = false;
             _quotaButtonImg.color = _quotaBaseCol;
             _playFirstClockSound = false;
             _playSecondClockSound = true;
             SetupQuotaText();
+
+            // <--- NEW CODE ADDDED HERE --->
+            if (_successDialogue != null)
+            {
+                // This triggers the dialogue and pauses the game immediately
+                _successDialogue.StartDialogue();
+            }
+            // <---------------------------->
         }
         #endregion
     }
