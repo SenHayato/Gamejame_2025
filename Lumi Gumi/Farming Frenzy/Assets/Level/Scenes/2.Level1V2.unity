@@ -15629,14 +15629,14 @@ RectTransform:
   m_GameObject: {fileID: 626702397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 209781148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: -97}
+  m_AnchoredPosition: {x: 516, y: 96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &626702399
@@ -16022,7 +16022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &694728441
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21360,7 +21360,7 @@ MonoBehaviour:
   - speakerName: Annecat
     dialogueText: I'm sorry, i don't have enough money for it. Please give me some
       more time.
-    speakerImageA: {fileID: 511082970857358728, guid: c5519abff8651d04fa5404486404ebad, type: 3}
+    speakerImageA: {fileID: 7152930139536384079, guid: c23dc50d376a2e64dad1569530df3a8e, type: 3}
     speakerImageB: {fileID: 0}
     isSpeakerAActive: 1
   - speakerName: Debt Collector
@@ -22518,14 +22518,14 @@ RectTransform:
   m_GameObject: {fileID: 1261352462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 694728441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: 51}
+  m_AnchoredPosition: {x: 516, y: 96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1261352464
@@ -31619,14 +31619,14 @@ RectTransform:
   m_GameObject: {fileID: 2142103321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 294988926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: 51}
+  m_AnchoredPosition: {x: 516, y: 96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2142103323
