@@ -13444,21 +13444,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dialogueLines:
-  - speakerName: mas
-    dialogueText: qwe
-    speakerImageA: {fileID: -7831603076164632680, guid: c5519abff8651d04fa5404486404ebad, type: 3}
-    speakerImageB: {fileID: 0}
-    isSpeakerAActive: 1
-  - speakerName: jokoo
-    dialogueText: w speed
+  - speakerName: Debt Collector
+    dialogueText: Good... i didnt expect you would be able to fulfill the debt you
+      owned.
     speakerImageA: {fileID: 0}
-    speakerImageB: {fileID: -2596899843133685804, guid: 8ebd3772b996ee442be02f444ec7be16, type: 3}
+    speakerImageB: {fileID: 511082970857358728, guid: c5519abff8651d04fa5404486404ebad, type: 3}
     isSpeakerAActive: 0
-  - speakerName: Jokowi
-    dialogueText: awe
-    speakerImageA: {fileID: 382544896688895571, guid: c5519abff8651d04fa5404486404ebad, type: 3}
-    speakerImageB: {fileID: 0}
-    isSpeakerAActive: 1
+  - speakerName: Debt Collector
+    dialogueText: I will return to take my parts.
+    speakerImageA: {fileID: 0}
+    speakerImageB: {fileID: 473276348246646460, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+    isSpeakerAActive: 0
   dialogueUI: {fileID: 294988925}
   speakerText: {fileID: 6256697}
   dialogueText: {fileID: 552588709}
@@ -14109,14 +14105,14 @@ RectTransform:
   m_GameObject: {fileID: 445330036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 209781148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -759, y: -97}
+  m_AnchoredPosition: {x: -490, y: 51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &445330038
@@ -16223,21 +16219,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dialogueLines:
-  - speakerName: wadaw
-    dialogueText: qwe
-    speakerImageA: {fileID: -8216661362464132121, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-    speakerImageB: {fileID: 0}
-    isSpeakerAActive: 1
-  - speakerName: qweq
-    dialogueText: w speed
+  - speakerName: Debt Collector
+    dialogueText: Looks like you do not possess enough wealth to pay your debt.
     speakerImageA: {fileID: 0}
-    speakerImageB: {fileID: -2596899843133685804, guid: 8ebd3772b996ee442be02f444ec7be16, type: 3}
-    isSpeakerAActive: 0
-  - speakerName: Jokowi
-    dialogueText: awe
-    speakerImageA: {fileID: 382544896688895571, guid: c5519abff8651d04fa5404486404ebad, type: 3}
     speakerImageB: {fileID: 0}
-    isSpeakerAActive: 1
+    isSpeakerAActive: 0
+  - speakerName: Debt Collector
+    dialogueText: Now, Suffer the consequences!
+    speakerImageA: {fileID: 0}
+    speakerImageB: {fileID: 0}
+    isSpeakerAActive: 0
   dialogueUI: {fileID: 209781147}
   speakerText: {fileID: 1496373259}
   dialogueText: {fileID: 836703848}
@@ -17147,14 +17138,14 @@ RectTransform:
   m_GameObject: {fileID: 776276066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 694728441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -759, y: -97}
+  m_AnchoredPosition: {x: -490, y: 51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &776276068
@@ -18390,14 +18381,14 @@ RectTransform:
   m_GameObject: {fileID: 887944743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 294988926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -759, y: -97}
+  m_AnchoredPosition: {x: -490, y: 51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &887944745
@@ -21033,21 +21024,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dialogueLines:
-  - speakerName: jokowi
-    dialogueText: rqar
+  - speakerName: Debt Collector
+    dialogueText: 'Hey brat, have your debt paid or suffer the consequences '
+    speakerImageA: {fileID: 0}
+    speakerImageB: {fileID: 511082970857358728, guid: c5519abff8651d04fa5404486404ebad, type: 3}
+    isSpeakerAActive: 0
+  - speakerName: Annecat
+    dialogueText: I'm sorry, i don't have enough money for it. Please give me some
+      more time.
     speakerImageA: {fileID: 511082970857358728, guid: c5519abff8651d04fa5404486404ebad, type: 3}
     speakerImageB: {fileID: 0}
     isSpeakerAActive: 1
-  - speakerName: prabowo
-    dialogueText: w speed
+  - speakerName: Debt Collector
+    dialogueText: Enough of your excuses. I'll only be giving you some spare amount
+      of days or else, I would eat you.
     speakerImageA: {fileID: 0}
-    speakerImageB: {fileID: -8216661362464132121, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+    speakerImageB: {fileID: -1159967808527262342, guid: c5519abff8651d04fa5404486404ebad, type: 3}
     isSpeakerAActive: 0
-  - speakerName: Jokowi
-    dialogueText: awe
-    speakerImageA: {fileID: 382544896688895571, guid: c5519abff8651d04fa5404486404ebad, type: 3}
-    speakerImageB: {fileID: 0}
-    isSpeakerAActive: 1
   dialogueUI: {fileID: 694728440}
   speakerText: {fileID: 731334501}
   dialogueText: {fileID: 1326133695}
@@ -22194,14 +22187,14 @@ RectTransform:
   m_GameObject: {fileID: 1261352462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 694728441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: -97}
+  m_AnchoredPosition: {x: 576, y: 51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1261352464
@@ -31362,14 +31355,14 @@ RectTransform:
   m_GameObject: {fileID: 2142103321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 294988926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: -97}
+  m_AnchoredPosition: {x: 576, y: 51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2142103323
