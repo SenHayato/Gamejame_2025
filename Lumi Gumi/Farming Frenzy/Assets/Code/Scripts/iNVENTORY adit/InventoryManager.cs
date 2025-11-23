@@ -1,15 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Code.Scripts.Player; // To access Money
+using Code.Scripts.Player;
 using Code.Scripts.Menus;
+
 namespace Code.Scripts.Managers
 {
     public class InventoryManager : MonoBehaviour
     {
         public static InventoryManager Instance;
 
-        // Key = Plant Name (e.g., "Tomato"), Value = Quantity owned
         private Dictionary<string, int> _inventory = new Dictionary<string, int>();
+
+        // --- NEW: Track total harvested for the end screen ---
+        public int TotalHarvestedCount { get; private set; }
 
         private void Awake()
         {
@@ -19,6 +22,9 @@ namespace Code.Scripts.Managers
 
         public void AddItem(string plantName, int amount = 1)
         {
+            // --- NEW: Increment total stats ---
+            TotalHarvestedCount += amount;
+
             if (_inventory.ContainsKey(plantName))
             {
                 _inventory[plantName] += amount;
@@ -28,38 +34,27 @@ namespace Code.Scripts.Managers
                 _inventory.Add(plantName, amount);
             }
 
-            // Refresh UI whenever data changes
             if (InventoryUI.Instance != null) InventoryUI.Instance.RefreshInventoryUI();
         }
 
+        // ... rest of your TrySellItem and GetInventory methods remain the same ...
         public bool TrySellItem(string plantName, PlantData data)
         {
             if (_inventory.ContainsKey(plantName) && _inventory[plantName] > 0)
             {
-                // 1. Remove item
                 _inventory[plantName]--;
                 if (_inventory[plantName] <= 0)
                 {
                     _inventory.Remove(plantName);
                 }
-
-                // 2. Give Gold (Using the separate generated gold value)
-                // Assuming PlayerController has an AddMoney or simple Money += logic
-                PlayerController.Instance.Purchase(-data._goldGenerated); // Negative purchase = Add money? 
-                // Or if you have specific method: PlayerController.Instance.AddMoney(data._goldGenerated);
-
+                PlayerController.Instance.Purchase(-data._goldGenerated);
                 AudioManager.Instance.PlaySFX("kaching");
-
-                // 3. Refresh UI
                 if (InventoryUI.Instance != null) InventoryUI.Instance.RefreshInventoryUI();
                 return true;
             }
             return false;
         }
 
-        public Dictionary<string, int> GetInventory()
-        {
-            return _inventory;
-        }
+        public Dictionary<string, int> GetInventory() { return _inventory; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 [System.Serializable]
 public struct DialogueLine
 {
@@ -20,7 +20,7 @@ public class NPCInteraction : MonoBehaviour
     [Header("Interaction Settings")]
     [SerializeField] private float interactionRadius = 2f;
     [SerializeField] private GameObject interactIndicator;
-
+    public UnityEngine.Events.UnityEvent onDialogueFinished;
     [Header("Dialogue Settings")]
     [SerializeField] private List<DialogueLine> dialogueLines;
     [SerializeField] private GameObject dialogueUI;
@@ -271,7 +271,7 @@ public class NPCInteraction : MonoBehaviour
                 interactIndicator.SetActive(true);
             }
         }
-
+        onDialogueFinished?.Invoke();
         if (oneTimeOnly && patrolPoint != null)
         {
             isPatrolling = true;
