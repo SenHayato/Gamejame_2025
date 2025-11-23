@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 8337780805779089026, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   - {fileID: 2125331982801898114, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   _harvestedSprite: {fileID: 6814802133438683, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  _cursorSprite: {fileID: 2125331982801898114, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _cursorSprite: {fileID: -9177740170459379683, guid: 7500c76080c7cf64093059105edaa00e, type: 3}
   _roleIcon: {fileID: 21300000, guid: 765f15335c9443f4c950e3a99a997c96, type: 3}
   _isTree: 0
   _cannotHarvest: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   _maturationCycle: 6
   _fruitingCycle: 7
   flavorText: Doubles nearby defensive<br>plant damage
-  power: 7
+  power: 1
   _tier: 3
   _price: 300
   _goldGenerated: 3

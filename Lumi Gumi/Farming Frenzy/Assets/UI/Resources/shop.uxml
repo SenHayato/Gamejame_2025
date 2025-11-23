@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.7); width: 488px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: auto; align-self: flex-start; opacity: 1; left: 33px; align-items: center; justify-content: flex-start; bottom: 32px; top: auto; right: auto; position: absolute; height: 475px;">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.7); width: 420px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: auto; align-self: flex-start; opacity: 1; left: 46px; align-items: center; justify-content: flex-start; bottom: 27px; top: auto; right: auto; position: absolute; height: 412px;">
         <ui:Label text="Shop" style="font-size: 32px; color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/joystix%20monospace.otf?fileID=12800000&amp;guid=9cb5f90d33cc95442a7f1dcd24f05877&amp;type=3#joystix monospace&quot;);" />
-        <ui:ScrollView name="shop_list" style="flex-grow: 0;" />
+        <ui:ScrollView name="shop_list" style="flex-grow: 0; right: 12px; left: 12px; bottom: 0; top: 59px; position: absolute;" />
         <ui:VisualElement name="after_shop" style="flex-grow: 1;" />
     </ui:VisualElement>
 </ui:UXML>

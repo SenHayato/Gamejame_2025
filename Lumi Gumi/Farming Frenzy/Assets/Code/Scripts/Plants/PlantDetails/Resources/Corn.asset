@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 3389359819911840689, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   - {fileID: 2409062927273309327, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   _harvestedSprite: {fileID: 1280881287140897439, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  _cursorSprite: {fileID: 2409062927273309327, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  _cursorSprite: {fileID: -6521346793507321066, guid: 3f8388be5a75b864a957f76984bff5e2, type: 3}
   _roleIcon: {fileID: 7675826601332790545, guid: 8f6e6ddb86e217d4eab7f1f75bd7d827, type: 3}
   _isTree: 0
   _cannotHarvest: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
   _maturationCycle: 7
   _fruitingCycle: 12
   flavorText: Great planted together;<br>avoid planting alone!
-  power: 3
+  power: 1
   _tier: 1
   _price: 20
   _goldGenerated: 4
