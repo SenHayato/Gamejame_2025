@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: Corn
   m_EditorClassIdentifier: 
   _maturationSprite:
-  - {fileID: -8463751307097313094, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  - {fileID: -7017202247838496533, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  - {fileID: 1280881287140897439, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -5413607947630144341, guid: c4b084b20c999e24b8006cf53af23a52, type: 3}
+  - {fileID: -6594312803792237640, guid: 6b2e141b2f1e3334ca531615ddac0df5, type: 3}
+  - {fileID: -6594312803792237640, guid: 6b2e141b2f1e3334ca531615ddac0df5, type: 3}
   _growthSprite:
-  - {fileID: 3389359819911840689, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  - {fileID: 3389359819911840689, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
-  - {fileID: 2409062927273309327, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
+  - {fileID: -1273910851166967937, guid: 11c7f10a523a0e746a38322808235761, type: 3}
   _harvestedSprite: {fileID: 1280881287140897439, guid: bb1a0d93a4fd7df47ae8f37d3208d323, type: 3}
   _cursorSprite: {fileID: -6521346793507321066, guid: 3f8388be5a75b864a957f76984bff5e2, type: 3}
   _roleIcon: {fileID: 7675826601332790545, guid: 8f6e6ddb86e217d4eab7f1f75bd7d827, type: 3}
