@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Events;
+
 [System.Serializable]
 public struct DialogueLine
 {
@@ -20,7 +20,7 @@ public class NPCInteraction : MonoBehaviour
     [Header("Interaction Settings")]
     [SerializeField] private float interactionRadius = 2f;
     [SerializeField] private GameObject interactIndicator;
-    public UnityEngine.Events.UnityEvent onDialogueFinished;
+
     [Header("Dialogue Settings")]
     [SerializeField] private List<DialogueLine> dialogueLines;
     [SerializeField] private GameObject dialogueUI;
@@ -49,6 +49,8 @@ public class NPCInteraction : MonoBehaviour
 
     [SerializeField] private GameObject blurPanel;
 
+    [Header("Events")]
+    public UnityEngine.Events.UnityEvent onDialogueFinished;
 
     private bool isPlayerInRange = false;
     private bool isPatrolling = false;
@@ -64,6 +66,11 @@ public class NPCInteraction : MonoBehaviour
 
     private float previousTimeScale = 1f;
 
+    // --- FIX START: Variables to store your Inspector Scale ---
+    private Vector3 defaultScaleA;
+    private Vector3 defaultScaleB;
+    // --- FIX END ---
+
     private void Start()
     {
         dialogueQueue = new Queue<DialogueLine>();
@@ -72,23 +79,24 @@ public class NPCInteraction : MonoBehaviour
         if (interactIndicator != null)
             interactIndicator.SetActive(false);
 
+        // --- FIX START: Remember the scale you set in Inspector (e.g., 5) ---
+        if (speakerImageA != null) defaultScaleA = speakerImageA.transform.localScale;
+        if (speakerImageB != null) defaultScaleB = speakerImageB.transform.localScale;
+        // --- FIX END ---
+
         speakerImageA.enabled = false;
         speakerImageB.enabled = false;
 
-        // --- NEW LOGIC: Trigger automatically when Scene Starts ---
         if (autoStartDialogue && !hasTriggered)
         {
             autoStartCoroutine = StartCoroutine(WaitAndStartDialogue());
         }
     }
 
-    // --- The Timer Logic ---
     private IEnumerator WaitAndStartDialogue()
     {
-        // Wait for 3 seconds (or whatever is set in Inspector)
         yield return new WaitForSeconds(autoStartDelay);
 
-        // Double check dialogue hasn't been triggered manually yet
         if (!isDialogueActive && (!oneTimeOnly || !hasTriggered))
         {
             StartDialogue();
@@ -96,8 +104,6 @@ public class NPCInteraction : MonoBehaviour
 
         autoStartCoroutine = null;
     }
-
-    // ... (Rest of the code remains the same) ...
 
     public void OnInteractButtonClicked()
     {
@@ -111,16 +117,13 @@ public class NPCInteraction : MonoBehaviour
     {
         if (isSkipPanelOpen) return;
 
-        // --- PART 1: ADVANCE DIALOGUE (Click / Space / F) ---
-        // We REMOVED isPlayerInRange here. 
-        // As long as the dialogue is running, you can click from anywhere.
+        // Advance Dialogue
         if (isDialogueActive)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F))
             {
                 if (isTyping)
                 {
-                    // Instant finish typing
                     if (typingCoroutine != null) StopCoroutine(typingCoroutine);
                     dialogueText.text = currentFullLine;
                     isTyping = false;
@@ -128,22 +131,19 @@ public class NPCInteraction : MonoBehaviour
                 }
                 else
                 {
-                    // Next sentence
                     DisplayNextSentence();
                 }
             }
-            // We return here so we don't accidentally trigger the "Start" logic below in the same frame
             return;
         }
 
-        // --- PART 2: MANUAL START (F) ---
-        // This still requires you to be close to the NPC to START the conversation manually.
+        // Manual Start
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             StartDialogue();
         }
 
-        // --- PART 3: PATROL LOGIC ---
+        // Patrol
         if (isPatrolling)
         {
             float step = patrolSpeed * Time.unscaledDeltaTime;
@@ -166,13 +166,11 @@ public class NPCInteraction : MonoBehaviour
 
         if (hasTriggered && oneTimeOnly)
         {
-            Debug.Log("Dialogue already triggered and is set to one-time only.");
             return;
         }
 
         if (dialogueLines.Count == 0)
         {
-            Debug.LogWarning("No dialogue lines assigned for this NPC!");
             return;
         }
 
@@ -209,8 +207,7 @@ public class NPCInteraction : MonoBehaviour
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(TypeSentence(currentFullLine));
 
-        Vector3 fullSize = Vector3.one;
-        Vector3 dimmedSize = new Vector3(0.9f, 0.9f, 1f);
+        // --- FIX START: Use the stored defaultScale instead of Vector3.one ---
 
         Color bright = Color.white;
         Color dim = new Color(0.8f, 0.8f, 0.8f, 1f);
@@ -219,7 +216,11 @@ public class NPCInteraction : MonoBehaviour
         {
             speakerImageA.enabled = true;
             speakerImageA.sprite = currentLine.speakerImageA;
-            speakerImageA.transform.localScale = currentLine.isSpeakerAActive ? fullSize : dimmedSize;
+
+            // Calculate dimmed scale based on YOUR default scale (e.g. 5 becomes 4.5)
+            Vector3 dimmedScaleA = defaultScaleA * 0.9f;
+
+            speakerImageA.transform.localScale = currentLine.isSpeakerAActive ? defaultScaleA : dimmedScaleA;
             speakerImageA.color = currentLine.isSpeakerAActive ? bright : dim;
         }
         else
@@ -231,19 +232,22 @@ public class NPCInteraction : MonoBehaviour
         {
             speakerImageB.enabled = true;
             speakerImageB.sprite = currentLine.speakerImageB;
-            speakerImageB.transform.localScale = currentLine.isSpeakerAActive ? dimmedSize : fullSize;
+
+            // Calculate dimmed scale based on YOUR default scale
+            Vector3 dimmedScaleB = defaultScaleB * 0.9f;
+
+            speakerImageB.transform.localScale = currentLine.isSpeakerAActive ? dimmedScaleB : defaultScaleB;
             speakerImageB.color = currentLine.isSpeakerAActive ? dim : bright;
         }
         else
         {
             speakerImageB.enabled = false;
         }
+        // --- FIX END ---
     }
 
     private void EndDialogue()
     {
-        Debug.Log("Dialogue ended.");
-
         Time.timeScale = previousTimeScale;
 
         isDialogueActive = false;
@@ -259,7 +263,6 @@ public class NPCInteraction : MonoBehaviour
 
         hasTriggered = oneTimeOnly || hasTriggered;
 
-        // Only show indicator if player is actually near (logic for manual re-trigger)
         if (interactIndicator != null && isPlayerInRange)
         {
             if (oneTimeOnly && hasTriggered && patrolPoint != null)
@@ -271,11 +274,13 @@ public class NPCInteraction : MonoBehaviour
                 interactIndicator.SetActive(true);
             }
         }
-        onDialogueFinished?.Invoke();
+
         if (oneTimeOnly && patrolPoint != null)
         {
             isPatrolling = true;
         }
+
+        onDialogueFinished?.Invoke();
     }
 
     public void OnSkipButtonPressed()
@@ -312,9 +317,6 @@ public class NPCInteraction : MonoBehaviour
         if (skipButton != null) skipButton.SetActive(true);
     }
 
-    // --- Trigger logic for Manual Interaction (pressing F) ---
-    // We keep this so if the auto-dialogue finishes, the player can come back 
-    // and talk again manually (if oneTimeOnly is false).
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
