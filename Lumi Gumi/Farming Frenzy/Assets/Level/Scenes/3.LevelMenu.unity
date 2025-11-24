@@ -5765,7 +5765,6 @@ GameObject:
   - component: {fileID: 1797726743}
   - component: {fileID: 1797726747}
   - component: {fileID: 1797726746}
-  - component: {fileID: 1797726745}
   - component: {fileID: 1797726744}
   m_Layer: 5
   m_Name: Panel
@@ -5815,7 +5814,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1534433449243677265, guid: 1aa7a43ee54e76f41bb3d0f2c8027585, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 20fd9084ea33d9147b1e71e8eff43ccf, type: 3}
+  m_Resource: {fileID: 8300000, guid: 43a3600832cd08f49905840d7d213764, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.65
   m_Pitch: 1
@@ -5901,32 +5900,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1797726745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797726742}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea1f2bd99b56ab48938c4217e0e0e2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _panel: {fileID: 1797726742}
-  _titleText: {fileID: 1556176363}
-  _debtText: {fileID: 185859800}
-  _harvestText: {fileID: 1447165495}
-  _timeText: {fileID: 1319265728}
-  _stars:
-  - {fileID: 891397228}
-  - {fileID: 1751436770}
-  - {fileID: 662253929}
-  _starFilled: {fileID: 4815476061570213978, guid: 0ff9b2ceb23e53943a30e1f58816d3f9, type: 3}
-  _starEmpty: {fileID: 5537382605564538237, guid: 321b55157f96a0043a604a69d38a5f5c, type: 3}
-  _mainMenuButton: {fileID: 1828997856}
-  _restartButton: {fileID: 1824712539}
-  _mainMenuSceneName: 1.MainMenu
 --- !u!114 &1797726746
 MonoBehaviour:
   m_ObjectHideFlags: 0
