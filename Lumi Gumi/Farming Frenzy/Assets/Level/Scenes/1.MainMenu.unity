@@ -2397,8 +2397,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8de1457fc86ab8c41a4228d5893b1b8a, type: 3}
   - {fileID: 8300000, guid: 43a3600832cd08f49905840d7d213764, type: 3}
   - {fileID: 8300000, guid: 96ac0d49f9f9bc044b73c3c0a82cac25, type: 3}
-  _musicSource: {fileID: 0}
-  _sfxSource: {fileID: 0}
+  _musicSource: {fileID: 215684463}
+  _sfxSource: {fileID: 215684463}
   audioMixer: {fileID: 24100000, guid: 1aa7a43ee54e76f41bb3d0f2c8027585, type: 2}
   gameStart: 0
 --- !u!4 &215684465
