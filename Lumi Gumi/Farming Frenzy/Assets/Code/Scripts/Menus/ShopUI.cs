@@ -130,6 +130,7 @@ namespace Code.Scripts.Menus
             // Add event listeners
             PlayerController.Instance.OnMoneyChange += amount =>
             {
+                if (this == null || gameObject == null || ui == null) return;
                 var color = FarmingFrenzyColors.PriceColor(data._price);
                 shopEntryPrice.style.color = color;
                 tooltipPrice.style.color = color;

@@ -6348,15 +6348,15 @@ MonoBehaviour:
   _levels:
   - button: {fileID: 876402738}
     buttonImage: {fileID: 876402739}
-    sceneName: 2.Level1V2
+    sceneName: Lvl1
     levelNumberText: {fileID: 930391415}
   - button: {fileID: 1957074278}
     buttonImage: {fileID: 1957074279}
-    sceneName: 2.Level1
+    sceneName: Lvl2
     levelNumberText: {fileID: 1238745961}
   - button: {fileID: 1408446025}
     buttonImage: {fileID: 1408446026}
-    sceneName: a
+    sceneName: Lvl3
     levelNumberText: {fileID: 1624542268}
   _lockedSprite: {fileID: 1599194981570153268, guid: 3d804b43295e0f047829a78d9719bf58, type: 3}
   _unlockedSprite: {fileID: -4621640706275063758, guid: cb9821c13ea322d41a075788dbd655c0, type: 3}

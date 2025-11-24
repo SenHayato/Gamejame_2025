@@ -84,6 +84,7 @@ namespace Code.Scripts.Managers
 
         private void Start()
         {
+            Time.timeScale = 1f;
             AudioManager.Instance.SetInitialMusicVolume();
             GridManager.Instance.Restart();
             EnemySpawnManager.Instance.Restart();

@@ -12945,7 +12945,7 @@ MonoBehaviour:
   _starEmpty: {fileID: 5537382605564538237, guid: 321b55157f96a0043a604a69d38a5f5c, type: 3}
   _mainMenuButton: {fileID: 422053550}
   _restartButton: {fileID: 1877219303}
-  _mainMenuSceneName: 1.MainMenu
+  _mainMenuSceneName: 3.LevelMenu
 --- !u!82 &343739763
 AudioSource:
   m_ObjectHideFlags: 0
