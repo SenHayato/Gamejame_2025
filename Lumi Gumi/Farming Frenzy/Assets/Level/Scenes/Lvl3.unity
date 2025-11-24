@@ -13249,6 +13249,7 @@ GameObject:
   - component: {fileID: 381880625}
   - component: {fileID: 381880628}
   - component: {fileID: 381880629}
+  - component: {fileID: 381880630}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13393,6 +13394,19 @@ MonoBehaviour:
   _minZoom: 30
   _maxZoom: 70
   _tilemap: {fileID: 1995066698}
+--- !u!114 &381880630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381880624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3101e77d06a7b4db1136c2adef73b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicTrackName: Gameplay
 --- !u!1 &383959664
 GameObject:
   m_ObjectHideFlags: 0

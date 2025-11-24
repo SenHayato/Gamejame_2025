@@ -37,6 +37,11 @@ public class AudioManager : MonoBehaviour
 
     #region Singleton
     public static AudioManager Instance;
+    public void StopMusic()
+    {
+        _musicSource.Stop();
+    }
+
     private void Awake()
     {
         if (Instance == null)
