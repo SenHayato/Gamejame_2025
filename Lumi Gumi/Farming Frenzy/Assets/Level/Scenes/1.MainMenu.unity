@@ -2377,11 +2377,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d216562b57f67a9468ce270f00b3fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicSounds:
-  - {fileID: 8300000, guid: df22fb5f12e13194f90bde3e19ad14b6, type: 3}
+  _musicSounds: []
   _sfxSounds:
   - {fileID: 8300000, guid: 1d3eb7a10803dca4f8141e3940a40d4b, type: 3}
+  - {fileID: 8300000, guid: f39f3c6d74ff8d74788ebf07ddc6592a, type: 3}
+  - {fileID: 8300000, guid: 538426d1a4a3eac4d9efdec27e015397, type: 3}
   - {fileID: 8300000, guid: 376e3322d48c96243a697da76ade2f4a, type: 3}
+  - {fileID: 8300000, guid: e877ef0989bbe9e46baa3700a0f00c68, type: 3}
   - {fileID: 8300000, guid: a891b990980f7164a93fd0b2c6618a08, type: 3}
   - {fileID: 8300000, guid: f2c33495413def5478bc8759b985b4bd, type: 3}
   - {fileID: 8300000, guid: c1732ea398b979945adeee38b0f8f4ae, type: 3}
@@ -2389,16 +2391,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a23d5d50eea2ca349b4c7f8c7c573f9f, type: 3}
   - {fileID: 8300000, guid: 75c0ea74183e2ba47a266b4f82482b10, type: 3}
   - {fileID: 8300000, guid: f65b702a7358f954689de8dcfae60f9d, type: 3}
-  - {fileID: 8300000, guid: ab88ff2bd6ccbe84f93694755f227f2d, type: 3}
-  - {fileID: 8300000, guid: 538426d1a4a3eac4d9efdec27e015397, type: 3}
-  - {fileID: 8300000, guid: f39f3c6d74ff8d74788ebf07ddc6592a, type: 3}
   - {fileID: 8300000, guid: a70a0297fa3be96979d8409936025780, type: 3}
-  - {fileID: 8300000, guid: d75694b525671a749bc71030192c71da, type: 3}
+  - {fileID: 8300000, guid: 96ac0d49f9f9bc044b73c3c0a82cac25, type: 3}
   - {fileID: 8300000, guid: 94d99ab613e865a4481d75130731409b, type: 3}
   - {fileID: 8300000, guid: 8de1457fc86ab8c41a4228d5893b1b8a, type: 3}
   - {fileID: 8300000, guid: 43a3600832cd08f49905840d7d213764, type: 3}
-  _musicSource: {fileID: 215684463}
-  _sfxSource: {fileID: 215684462}
+  - {fileID: 8300000, guid: 96ac0d49f9f9bc044b73c3c0a82cac25, type: 3}
+  _musicSource: {fileID: 0}
+  _sfxSource: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 1aa7a43ee54e76f41bb3d0f2c8027585, type: 2}
   gameStart: 0
 --- !u!4 &215684465
