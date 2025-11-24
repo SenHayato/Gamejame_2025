@@ -258,7 +258,7 @@ namespace Code.Scripts.Managers
             _goats = enemyCount;
         }
 
-        private void PauseGame()
+        public void PauseGame()
         {
             _pauseMenu.gameObject.SetActive(true);
             Time.timeScale = 0f;
