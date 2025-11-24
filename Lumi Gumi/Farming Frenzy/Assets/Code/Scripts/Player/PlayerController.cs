@@ -191,7 +191,7 @@ namespace Code.Scripts.Player
         void AddMoney()
         {
             //cheatcode
-            if (Input.GetKeyDown(KeyCode.Keypad0))
+            if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.O))
             {
                 _money += 10000;
             }

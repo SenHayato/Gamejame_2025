@@ -29506,6 +29506,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 94d99ab613e865a4481d75130731409b, type: 3}
   - {fileID: 8300000, guid: 8de1457fc86ab8c41a4228d5893b1b8a, type: 3}
   - {fileID: 8300000, guid: 43a3600832cd08f49905840d7d213764, type: 3}
+  - {fileID: 8300000, guid: 96ac0d49f9f9bc044b73c3c0a82cac25, type: 3}
   _musicSource: {fileID: 1896792630}
   _sfxSource: {fileID: 1896792629}
   audioMixer: {fileID: 24100000, guid: 1aa7a43ee54e76f41bb3d0f2c8027585, type: 2}
@@ -32422,30 +32423,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5433166606532621114}
     m_Modifications:
-    - target: {fileID: 5732526770867373982, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5732526770867373982, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5732526770867373982, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5732526770867373982, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5732526770867373982, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771673466325187861, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8399424618242616362, guid: 5fe9d30ebfe03e34480cbec67bba20c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

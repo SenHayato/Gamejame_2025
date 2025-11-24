@@ -274,7 +274,8 @@ namespace Code.Scripts.Enemy
             GameManager.Instance.ShowFloatingText($"-{PlayerController.Instance.SprayPurchaseAmount}G");
             PlayerController.Instance.SprayParticles();
 
-            _audioManager.PlaySFX("spray");
+            //_audioManager.PlaySFX("spray");
+            _audioManager.PlaySFX("Sword hit");
             TakeDamage(_maxHealth); //sekali hit ini
         }
         #endregion
