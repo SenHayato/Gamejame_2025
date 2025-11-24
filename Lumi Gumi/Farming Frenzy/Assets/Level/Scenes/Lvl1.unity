@@ -31870,7 +31870,7 @@ MonoBehaviour:
   _quota: 150
   _quotaIncreaseRate: 2
   _timerRate: 20
-  _dayTime: 10
+  _dayTime: 60
   _enemyDifficulty: 5
   _enemySpawnFrequency: 5
   _successDialogue: {fileID: 390658846}

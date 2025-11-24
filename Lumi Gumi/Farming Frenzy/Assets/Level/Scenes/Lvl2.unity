@@ -31867,12 +31867,12 @@ MonoBehaviour:
   _dayNightAnimator: {fileID: 697990103}
   _quotaButtonImg: {fileID: 916534511}
   _floatingTextPrefab: {fileID: 7044524255995285942, guid: 5bb772986ba87219e83c41ba410f0301, type: 3}
-  _quota: 150
+  _quota: 500
   _quotaIncreaseRate: 2
-  _timerRate: 20
-  _dayTime: 10
-  _enemyDifficulty: 5
-  _enemySpawnFrequency: 5
+  _timerRate: 40
+  _dayTime: 60
+  _enemyDifficulty: 10
+  _enemySpawnFrequency: 7
   _successDialogue: {fileID: 390658846}
   _failedDialogue: {fileID: 704034586}
   _levelPopup: {fileID: 343739762}
