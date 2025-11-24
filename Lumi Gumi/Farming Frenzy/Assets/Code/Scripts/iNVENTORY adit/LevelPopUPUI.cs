@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 namespace Code.Scripts.Menus
 {
     public class LevelPopupUI : MonoBehaviour
@@ -25,6 +24,8 @@ namespace Code.Scripts.Menus
 
         [SerializeField] private string _mainMenuSceneName = "MainMenu";
 
+        // ... inside LevelPopupUI.cs ...
+
         public void ShowPopup(bool isWin, int debtLeft, int totalHarvested, float timeLeft, float totalTime)
         {
             _panel.SetActive(true);
@@ -33,7 +34,7 @@ namespace Code.Scripts.Menus
             if (isWin)
             {
                 _titleText.text = "Level Completed";
-                _titleText.color = new Color(0.2f, 0.4f, 0.2f); // Dark Green
+                _titleText.color = new Color(0.2f, 0.4f, 0.2f);
             }
             else
             {
@@ -41,24 +42,42 @@ namespace Code.Scripts.Menus
                 _titleText.color = Color.red;
             }
 
-            // 2. Set Stats Text
+            // 2. Set Stats Text (Visuals for right now)
             _debtText.text = isWin ? "Debt Paid!" : $"Debt Left: {debtLeft}G";
             _harvestText.text = $"{totalHarvested}";
 
-            // Format Time
             string timeStr = FormatTime(timeLeft);
             string totalTimeStr = FormatTime(totalTime);
             _timeText.text = $"{timeStr} / {totalTimeStr}";
 
-            // 3. Calculate Stars (0 stars if lost)
+            // 3. Calculate Stars
             int starCount = 0;
-
             if (isWin)
             {
                 starCount = 1;
                 float percentageLeft = timeLeft / totalTime;
                 if (percentageLeft > 0.2f) starCount++;
                 if (percentageLeft > 0.5f) starCount++;
+
+                // --- NEW: SAVE STATS LOGIC ---
+                string levelName = SceneManager.GetActiveScene().name;
+                string keyStars = levelName + "_Stars";
+
+                // Get current bests
+                int bestStars = PlayerPrefs.GetInt(keyStars, 0);
+                float bestTime = PlayerPrefs.GetFloat(levelName + "_BestTime", -1f);
+
+                // Save if we got more stars OR (same stars but more time remaining)
+                if (starCount > bestStars || (starCount == bestStars && timeLeft > bestTime))
+                {
+                    PlayerPrefs.SetInt(keyStars, starCount);
+                    PlayerPrefs.SetInt(levelName + "_Harvest", totalHarvested);
+                    PlayerPrefs.SetFloat(levelName + "_BestTime", timeLeft);
+                    PlayerPrefs.SetFloat(levelName + "_TotalTime", totalTime); // Save limit for display
+                    PlayerPrefs.Save();
+                    Debug.Log($"Saved new record for {levelName}");
+                }
+                // -----------------------------
             }
 
             // 4. Update Star Visuals
@@ -68,7 +87,7 @@ namespace Code.Scripts.Menus
                 starImg.sprite = (i < starCount) ? _starFilled : _starEmpty;
             }
 
-            // 5. Button Logic
+            // 5. Button Logic (Rest of your existing button code...)
             SetupButtons(isWin);
         }
 

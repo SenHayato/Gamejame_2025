@@ -320,6 +320,10 @@ namespace Code.Scripts.Managers
             _currentQuotaPayment += amount;
             _quotaPaymentLeft = _quota - _currentQuotaPayment;
             SetupQuotaText();
+            if (_quotaPaymentLeft <= 0)
+            {
+                CheckGameOver();
+            }
         }
 
         // --- NEW LOGIC: Updated CheckGameOver to handle Win/Loss Dialogues and Popups ---

@@ -48,7 +48,7 @@ namespace Code.Scripts.Managers
                     _inventory.Remove(plantName);
                 }
                 PlayerController.Instance.Purchase(-data._goldGenerated);
-                AudioManager.Instance.PlaySFX("kaching");
+                AudioManager.Instance.PlaySFX("Coins");
                 if (InventoryUI.Instance != null) InventoryUI.Instance.RefreshInventoryUI();
                 return true;
             }
