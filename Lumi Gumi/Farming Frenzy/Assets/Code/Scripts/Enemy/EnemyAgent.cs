@@ -176,7 +176,7 @@ namespace Code.Scripts.Enemy
                     case State.Scared:
                         //_agentAnimator.SetBool("IsAttacking", false);
                         _agent.isStopped = true;
-                        Destroy(gameObject);
+                        //Destroy(gameObject);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -232,8 +232,8 @@ namespace Code.Scripts.Enemy
             }
             else
             {
-                isDeath = true;
-                Destroy(gameObject);
+                //isDeath = true;
+                //Destroy(gameObject);
             }
 
             RunAway();
