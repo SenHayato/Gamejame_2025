@@ -111,8 +111,13 @@ namespace Code.Scripts.Plants
             switch (cursor)
             {
                 case PlayerController.CursorState.Scythe:
-                    HarvestPlant();
-                    Destroy(gameObject);
+                    
+                    if (CanHarvestNow)
+                    {
+                        AudioManager.Instance.PlaySFX("picking");
+                        Harvest(); // Calls the reward logic
+                    }
+                    Kill();
                     break;
                 case PlayerController.CursorState.Shovel when !isContextual: // Prevent accidental digging
                     DigPlant();
@@ -232,7 +237,10 @@ namespace Code.Scripts.Plants
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
             if (!CanHarvestNow) return;
-
+            lock (_tile)
+            {
+                _tile.HasPlant = false;
+            }
             AudioManager.Instance.PlaySFX("picking");
             Harvest();
         }
