@@ -29,7 +29,7 @@ MonoBehaviour:
   flavorText: Endgame plant
   power: 1
   _tier: 2
-  _price: 20
-  _goldGenerated: 31
+  _price: 10
+  _goldGenerated: 15
   _health: 10
   _indestructible: 0
