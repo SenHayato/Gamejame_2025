@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections.Generic; // Added to use Dictionary/Lists
 
 namespace Code.Scripts.Menus
 {
@@ -39,8 +40,21 @@ namespace Code.Scripts.Menus
 
         private string _selectedLevel;
 
+        // Store the original sizes of buttons so we can restore them when unlocked
+        private Vector2[] _originalSizes;
+
         private void Start()
         {
+            // 1. Capture the original sizes BEFORE we change anything
+            _originalSizes = new Vector2[_levels.Length];
+            for (int i = 0; i < _levels.Length; i++)
+            {
+                if (_levels[i].buttonImage != null)
+                {
+                    _originalSizes[i] = _levels[i].buttonImage.rectTransform.sizeDelta;
+                }
+            }
+
             UpdateLevelButtons();
             _starPopupPanel.SetActive(false);
             _backButton.onClick.AddListener(ClosePopup);
@@ -62,11 +76,20 @@ namespace Code.Scripts.Menus
                     isUnlocked = prevStars > 0;
                 }
 
+                var rectTransform = _levels[i].buttonImage.rectTransform;
+
                 if (isUnlocked)
                 {
+                    // UNLOCKED STATE
                     _levels[i].buttonImage.sprite = _unlockedSprite;
                     _levels[i].button.interactable = true;
                     _levels[i].levelNumberText.gameObject.SetActive(true);
+
+                    // Restore the original width/height
+                    if (_originalSizes != null && _originalSizes.Length > i)
+                    {
+                        rectTransform.sizeDelta = _originalSizes[i];
+                    }
 
                     int index = i;
                     _levels[i].button.onClick.RemoveAllListeners();
@@ -74,9 +97,14 @@ namespace Code.Scripts.Menus
                 }
                 else
                 {
+                    // LOCKED STATE
                     _levels[i].buttonImage.sprite = _lockedSprite;
                     _levels[i].button.interactable = false;
                     _levels[i].levelNumberText.gameObject.SetActive(false);
+
+                    // Set Height to 286.8, Keep original Width
+                    float currentWidth = rectTransform.sizeDelta.x;
+                    rectTransform.sizeDelta = new Vector2(currentWidth, 286.8f);
                 }
             }
         }

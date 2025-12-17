@@ -31871,7 +31871,7 @@ MonoBehaviour:
   _dayNightAnimator: {fileID: 697990103}
   _quotaButtonImg: {fileID: 916534511}
   _floatingTextPrefab: {fileID: 7044524255995285942, guid: 5bb772986ba87219e83c41ba410f0301, type: 3}
-  _quota: 500
+  _quota: 250
   _quotaIncreaseRate: 2
   _timerRate: 40
   _dayTime: 60
