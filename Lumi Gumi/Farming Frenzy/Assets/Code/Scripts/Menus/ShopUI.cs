@@ -16,7 +16,7 @@ namespace Code.Scripts.Menus
         private VisualTreeAsset _itemTooltipTemplate;
         private ShopContainerTooltipManipulator _tooltipManipulator;
         private VisualElement _root;
-        [SerializeField] LevelManager levelManager;
+        public LevelManager levelManager;
         public bool MouseInShop => _tooltipManipulator.MouseInShop;
 
         private static ShopUI _instance;
@@ -47,63 +47,39 @@ namespace Code.Scripts.Menus
 
             var defaultSprite = Resources.Load<Sprite>("Placeholder");
 
+            List<string> plants;
+
             if (levelManager.levelNumber == 1)
             {
-                 var plants = new List<string> //Ngatur banyak list tanaman dalam shop
+                plants = new List<string>
                 {
-                // Tier 1
-                //"Tomato", "Corn",// "Clover", "Blister Berry",
-                
-                // Tier 2
-                 "Beans", //"Shrub Rose","Pumpkin", // "Scarecrow", "Marigold", "Banana",
-
-                // Tier 3
-                // "Chili", // "Cauli",
+                    "Beans"
                 };
-
-                foreach (var plant in plants)
-                {
-                    AddShopItem(Resources.Load<PlantData>(plant), defaultSprite);
-                }
             }
             else if (levelManager.levelNumber == 2)
             {
-                var plants = new List<string> //Ngatur banyak list tanaman dalam shop
+                plants = new List<string>
                 {
-                // Tier 1
-                //"Tomato", "Corn",// "Clover", "Blister Berry",
-                
-                // Tier 2
-                 "Beans", //"Shrub Rose","Pumpkin", // "Scarecrow", "Marigold", "Banana",
-
-                // Tier 3
-                 "Chili", // "Cauli",
+                    "Beans",
+                    "Chili"
                 };
-
-                foreach (var plant in plants)
-                {
-                    AddShopItem(Resources.Load<PlantData>(plant), defaultSprite);
-                }
             }
             else
             {
-                var plants = new List<string> //Ngatur banyak list tanaman dalam shop
+                plants = new List<string>
                 {
-                // Tier 1
-                "Tomato", "Corn",// "Clover", "Blister Berry",
-                
-                // Tier 2
-                 "Beans", //"Shrub Rose","Pumpkin", // "Scarecrow", "Marigold", "Banana",
-
-                // Tier 3
-                 "Chili", // "Cauli",
+                    "Tomato",
+                    "Corn",
+                    "Beans",
+                    "Chili"
                 };
-
-                foreach (var plant in plants)
-                {
-                    AddShopItem(Resources.Load<PlantData>(plant), defaultSprite);
-                }
             }
+
+            foreach (var plant in plants)
+            {
+                AddShopItem(Resources.Load<PlantData>(plant), defaultSprite);
+            }
+
 
             Resources.UnloadUnusedAssets();
             PlayerController.Instance.RefreshMoney();
