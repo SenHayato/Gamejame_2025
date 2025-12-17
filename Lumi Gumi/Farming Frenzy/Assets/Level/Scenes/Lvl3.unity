@@ -33110,14 +33110,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HelpMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 1099713604265423174, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2415654360609274492, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
-      propertyPath: m_text
-      value: Beans & Debt
-      objectReference: {fileID: 0}
     - target: {fileID: 3397608531386769122, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
