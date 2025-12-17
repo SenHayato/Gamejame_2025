@@ -1,3 +1,4 @@
+using System; // Added for [Serializable]
 using System.Collections.Generic;
 using System.Linq;
 using Code.GrowthRateExtension;
@@ -12,6 +13,22 @@ namespace Code.Scripts.Menus
 {
     public class ShopUI : MonoBehaviour
     {
+        // --- NEW: Helper struct for Inspector configuration ---
+        [Serializable]
+        public struct LevelShopConfig
+        {
+            public int levelNumber;
+            public List<string> plants;
+        }
+
+        [Header("Shop Configuration")]
+        [Tooltip("Define specific plant lists for specific levels here.")]
+        [SerializeField] private List<LevelShopConfig> _levelSpecificPlants;
+
+        [Tooltip("The list of plants to show if the current level is not found in the list above.")]
+        [SerializeField] private List<string> _defaultPlants;
+        // -----------------------------------------------------
+
         private VisualTreeAsset _itemTemplate;
         private VisualTreeAsset _itemTooltipTemplate;
         private ShopContainerTooltipManipulator _tooltipManipulator;
@@ -49,31 +66,20 @@ namespace Code.Scripts.Menus
 
             List<string> plants;
 
-            if (levelManager.levelNumber == 1)
+            // --- REPLACED HARDCODED LOGIC ---
+            // 1. Try to find a config that matches the current level number
+            var config = _levelSpecificPlants.FirstOrDefault(x => x.levelNumber == levelManager.levelNumber);
+
+            // 2. If found and has plants, use it. Otherwise, use default.
+            if (config.plants != null && config.plants.Count > 0)
             {
-                plants = new List<string>
-                {
-                    "Beans"
-                };
-            }
-            else if (levelManager.levelNumber == 2)
-            {
-                plants = new List<string>
-                {
-                    "Beans",
-                    "Chili"
-                };
+                plants = config.plants;
             }
             else
             {
-                plants = new List<string>
-                {
-                    "Tomato",
-                    "Corn",
-                    "Beans",
-                    "Chili"
-                };
+                plants = _defaultPlants;
             }
+            // --------------------------------
 
             foreach (var plant in plants)
             {
