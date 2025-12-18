@@ -10,7 +10,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-using Code.Scripts.Managers; 
+using Code.Scripts.Managers;
+
 namespace Code.Scripts.Plants
 {
     public class Plant : MonoBehaviour
@@ -40,7 +41,7 @@ namespace Code.Scripts.Plants
             {
                 return _state switch
                 {
-                    GrowthState.Seedling => Math.Max(0, (int) (_data._maturationCycle - _secsSinceGrowth)),
+                    GrowthState.Seedling => Math.Max(0, (int)(_data._maturationCycle - _secsSinceGrowth)),
                     GrowthState.Mature => _data._cannotHarvest ? -1 : Math.Max(0, (int)((_data._fruitingCycle - _secsSinceGrowth) / _fruitingRate)),
                     _ => 0
                 };
@@ -48,7 +49,7 @@ namespace Code.Scripts.Plants
         }
 
         public PowerKind PowerKind => _data.power;
-        
+
         private bool CanHarvestNow => !_data._cannotHarvest && _state == GrowthState.Fruited;
 
         public string PlantName => _data.name;
@@ -87,7 +88,7 @@ namespace Code.Scripts.Plants
             lock (PlayerController.Instance)
             {
                 cursor = PlayerController.Instance.CurrentlyActiveCursor;
-                
+
                 if (CanHarvestNow && cursor != PlayerController.CursorState.Shovel)
                 {
                     PlayerController.Instance.lastHarvestablePlant = Time.time;
@@ -98,7 +99,7 @@ namespace Code.Scripts.Plants
             }
 
             if (!Input.GetMouseButton(0)) return;
-            
+
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             var hit = Physics2D.GetRayIntersection(ray, 1500f);
 
@@ -111,18 +112,21 @@ namespace Code.Scripts.Plants
             switch (cursor)
             {
                 case PlayerController.CursorState.Scythe:
-                    
+                    if (EventSystem.current.IsPointerOverGameObject()) return;
+
                     if (CanHarvestNow)
                     {
                         AudioManager.Instance.PlaySFX("picking");
-                        Harvest(); // Calls the reward logic
+                        Harvest();
                     }
+
                     Kill();
                     break;
-                case PlayerController.CursorState.Shovel when !isContextual: // Prevent accidental digging
-                    DigPlant();
 
+                case PlayerController.CursorState.Shovel when !isContextual:
+                    DigPlant();
                     break;
+
                 case PlayerController.CursorState.Default:
                 case PlayerController.CursorState.Spray:
                 case PlayerController.CursorState.Planting:
@@ -151,9 +155,17 @@ namespace Code.Scripts.Plants
                     aoeCollider.size *= new Vector2(3, 2);
                     aoeCollider.offset *= new Vector2(0, 0.5f);
                 }
-       
+
                 _tile = tile;
                 _tile.HasPlant = true;
+
+                // --- NEW: Track Planting Objective ---
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.OnPlantPlanted(_data.name);
+                }
+                // -------------------------------------
+
                 print($"Just placed a {PlantName} on {_tile.name} (hasPlant = {_tile.HasPlant})");
 
                 _plantSpriteRenderer.sprite = _data._maturationSprite.First();
@@ -165,18 +177,18 @@ namespace Code.Scripts.Plants
         {
             if (Time.time >= _nextHealTime)
             {
-                // For efficiency, only recalculate these every 2s
                 _healRate = LegumePower.CalculateGrowthModifier(aoeCollider);
-                _fruitingRate = -1f; // Both of the next two are always 1.0f + something, so we account for that
+                _fruitingRate = -1f;
                 _fruitingRate += PlantName == "Corn" ? CornPower.CalculateCornFruitingModifier(aoeCollider) : 1.0f;
                 _fruitingRate += BananaPower.CalculateFruitingModifier(aoeCollider);
-    
+
                 _nextHealTime = Time.time + 2.0f;
 
                 _health = Math.Min(MaxHealth, _health + 2.0f * _healRate);
-                hBarController.value = _health/MaxHealth;
-                if(hBarController.value == hBarController.maxValue) {
-                     _healthBar.SetActive(false);
+                hBarController.value = _health / MaxHealth;
+                if (hBarController.value == hBarController.maxValue)
+                {
+                    _healthBar.SetActive(false);
                 }
             }
 
@@ -187,19 +199,18 @@ namespace Code.Scripts.Plants
 
                     if (_secsSinceGrowth >= _data._maturationCycle)
                     {
-                        // Plant has finished growing!
                         _state = GrowthState.Mature;
                         _plantSpriteRenderer.sprite = _data._growthSprite[0];
-                        _data.power.AddTo(gameObject); // Power only enabled when the plant is grown
+                        _data.power.AddTo(gameObject);
                         _secsSinceGrowth = 0;
-                    } else {
-                        // Plant is still growing
+                    }
+                    else
+                    {
                         var spriteIndex = Mathf.FloorToInt(_secsSinceGrowth * _data._maturationSprite.Length / _data._maturationCycle);
                         _plantSpriteRenderer.sprite = _data._maturationSprite[spriteIndex];
                     }
                     break;
                 case GrowthState.Mature:
-                    // This plant does not fruit
                     if (_data._cannotHarvest)
                     {
                         break;
@@ -223,7 +234,6 @@ namespace Code.Scripts.Plants
                     _state = GrowthState.Mature;
                     break;
                 case GrowthState.Fruited when _secsSinceGrowth >= 3.0:
-                    //Harvest(); //fungsi agar tanaman terpanen otomatis
                     break;
                 case GrowthState.Fruited:
                     _secsSinceGrowth += Time.deltaTime;
@@ -233,32 +243,20 @@ namespace Code.Scripts.Plants
             }
         }
 
-        private void HarvestPlant()
-        {
-            if (EventSystem.current.IsPointerOverGameObject()) return;
-            if (!CanHarvestNow) return;
-            lock (_tile)
-            {
-                _tile.HasPlant = false;
-            }
-            AudioManager.Instance.PlaySFX("picking");
-            Harvest();
-        }
-
         private void Harvest()
         {
             InventoryManager.Instance.AddItem(_data.name);
 
-            //bisa ditambahkan animasi particle effect buah dari panenan
+            // --- NEW: Track Harvest Objective ---
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnPlantHarvested(_data.name);
+            }
+            // ------------------------------------
+
             _playerController.SpawnCoinSpark(transform.position, Quaternion.identity);
 
-            // 2. (Optional) Show floating text so the player knows they got an item
-            // We use the GameManager we saw earlier for this
             GameManager.Instance.ShowFloatingText($"+1 {_data.name}");
-            //PlayerController.Instance.IncreaseMoney(_data._goldGenerated); //Fungsi buat langsung jualan
-            _state = GrowthState.Harvested;
-            _plantSpriteRenderer.sprite = _data._harvestedSprite;
-            _secsSinceGrowth = 0.0f;
         }
 
         private void DigPlant()
@@ -312,8 +310,8 @@ namespace Code.Scripts.Plants
             _healthBar.SetActive(true);
             _health -= amount;
             print($"{PlantName} took {amount} damage! HP = {_health}");
-            hBarController.value = _health/MaxHealth;
-            
+            hBarController.value = _health / MaxHealth;
+
             if (_health > 0) return false;
 
             Kill();
