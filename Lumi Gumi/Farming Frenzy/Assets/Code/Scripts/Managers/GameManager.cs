@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic; // Required for List
 using System.Linq;
 using Code.Scripts.Player;
 using Code.Scripts.GridSystem;
@@ -15,6 +16,28 @@ namespace Code.Scripts.Managers
     {
         private static readonly int NightTime = Animator.StringToHash("NightTime");
 
+        // --- NEW: Objective Class ---
+        [Serializable]
+        public class LevelObjective
+        {
+            public enum ObjectiveType { Plant, Harvest }
+            public string plantName;
+            public int targetAmount;
+            public ObjectiveType type;
+
+            [HideInInspector] public int currentAmount; // Tracks progress during the game
+
+            public bool IsCompleted => currentAmount >= targetAmount;
+
+            public string GetStatusText()
+            {
+                string verb = type == ObjectiveType.Plant ? "Plant" : "Harvest";
+                string color = IsCompleted ? "green" : "white";
+                return $"<color={color}>{verb} {plantName}: {currentAmount}/{targetAmount}</color>";
+            }
+        }
+        // ---------------------------
+
         #region Editor Fields
 
         [Header("Menus")]
@@ -25,13 +48,17 @@ namespace Code.Scripts.Managers
         [SerializeField] private GameObject _helpMenu;
         [SerializeField] private GameObject _optionsMenu;
 
-        [SerializeField] private GameObject _gameOverMenu; // (Old Game Over menu, might be redundant now but keeping it safe)
+        [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private TextMeshProUGUI _score;
         [SerializeField] private TextMeshProUGUI _timerText;
         [SerializeField] private TextMeshProUGUI _dayText;
         [SerializeField] private TextMeshProUGUI _weekText;
         [SerializeField] private TextMeshProUGUI _quotaText;
         [SerializeField] private TextMeshProUGUI _quotaPayText;
+
+        // --- NEW: Text to display objectives ---
+        [SerializeField] private TextMeshProUGUI _objectivesText;
+
         [SerializeField] private GameObject _quotaButton;
         [SerializeField] private Image _clockHand;
         [SerializeField] private Animator _dayNightAnimator;
@@ -46,7 +73,11 @@ namespace Code.Scripts.Managers
         [SerializeField] private int _enemyDifficulty;
         [SerializeField] private int _enemySpawnFrequency;
 
-        // --- NEW: Win/Loss Connections ---
+        // --- NEW: List of Objectives ---
+        [Header("Level Objectives")]
+        public List<LevelObjective> _levelObjectives; // Use (+) in Inspector to add
+        // -------------------------------
+
         [Header("Events & UI")]
         [SerializeField] private NPCInteraction _successDialogue;
         [SerializeField] private NPCInteraction _failedDialogue;
@@ -76,7 +107,6 @@ namespace Code.Scripts.Managers
         public int _goats;
         private readonly string[] _days = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
 
-        // State tracking for Win/Loss
         private bool _hasGameEnded = false;
         private bool _didWin = false;
 
@@ -100,9 +130,15 @@ namespace Code.Scripts.Managers
             _playSecondClockSound = false;
             ShopUI.Instance.SetHidden(false);
 
+            // Reset Objectives
+            foreach (var obj in _levelObjectives)
+            {
+                obj.currentAmount = 0;
+            }
+            UpdateObjectivesUI();
+
             if (_successDialogue != null)
             {
-                // Remove existing to prevent double calls, then add
                 _successDialogue.onDialogueFinished.RemoveListener(OnDialogueFinished);
                 _successDialogue.onDialogueFinished.AddListener(OnDialogueFinished);
             }
@@ -166,6 +202,46 @@ namespace Code.Scripts.Managers
             floatingText.GetComponent<FloatingText>().SetText(text, pos);
         }
 
+        // --- NEW: Objective Tracking Methods ---
+        public void OnPlantPlanted(string plantName)
+        {
+            foreach (var obj in _levelObjectives)
+            {
+                if (obj.type == LevelObjective.ObjectiveType.Plant && obj.plantName == plantName)
+                {
+                    obj.currentAmount++;
+                }
+            }
+            UpdateObjectivesUI();
+            CheckGameOver(); // Check if this was the last requirement
+        }
+
+        public void OnPlantHarvested(string plantName)
+        {
+            foreach (var obj in _levelObjectives)
+            {
+                if (obj.type == LevelObjective.ObjectiveType.Harvest && obj.plantName == plantName)
+                {
+                    obj.currentAmount++;
+                }
+            }
+            UpdateObjectivesUI();
+            CheckGameOver(); // Check if this was the last requirement
+        }
+
+        private void UpdateObjectivesUI()
+        {
+            if (_objectivesText == null) return;
+
+            string text = "";
+            foreach (var obj in _levelObjectives)
+            {
+                text += obj.GetStatusText() + "\n";
+            }
+            _objectivesText.text = text;
+        }
+        // ---------------------------------------
+
         private void UpdateQuotaClose()
         {
             if (!_quotaClose && _timeLeft <= _dayTime * 3 + 2 && _quotaPaymentLeft > 0)
@@ -222,7 +298,6 @@ namespace Code.Scripts.Managers
                 AudioManager.Instance.PlaySFX("rooster");
                 _animationStarted = false;
 
-                // Spawn Logic
                 var rightDayForSpawn = _dayCount % _enemySpawnFrequency == 0;
                 var monOrTues = _dayCount % 7 is 0 or 1;
                 var gracePeriod = _dayCount <= 7;
@@ -327,7 +402,6 @@ namespace Code.Scripts.Managers
             }
         }
 
-        // --- NEW LOGIC: Updated CheckGameOver to handle Win/Loss Dialogues and Popups ---
         private void CheckGameOver()
         {
             if (_hasGameEnded) return;
@@ -341,55 +415,72 @@ namespace Code.Scripts.Managers
                 debtRemaining = 0;
             }
 
-            // Game is Ending (either Win or Loss)
+            // --- NEW: Check Objectives ---
+            bool allObjectivesMet = true;
+            foreach (var obj in _levelObjectives)
+            {
+                if (!obj.IsCompleted) allObjectivesMet = false;
+            }
+            // -----------------------------
+
+            // Only end game if Debt is paid AND Objectives met OR if we just want to fail due to time/something else?
+            // Actually, CheckGameOver is usually called when Week ends OR Quota paid.
+            // If Week ends and objectives NOT met -> Fail.
+            // If Quota paid and objectives met -> Win.
+
+            bool isQuotaPaid = debtRemaining <= 0;
+            bool isWeekOver = _timeLeft <= 0; // Rough check if called from timer
+
+            // Case 1: WIN
+            if (isQuotaPaid && allObjectivesMet)
+            {
+                EndGame(true, 0);
+            }
+            // Case 2: LOSE (Week over and conditions not met)
+            else if (isWeekOver) // This assumes CheckGameOver is called at end of week
+            {
+                EndGame(false, debtRemaining);
+            }
+            // Case 3: Still playing (Quota paid but objectives missing)
+            else if (isQuotaPaid && !allObjectivesMet)
+            {
+                // Optionally show a message: "Quota paid! Now finish harvesting!"
+                ShowFloatingText("Quota Met! Finish Objectives!");
+            }
+        }
+
+        private void EndGame(bool win, int debtRemaining)
+        {
             _hasGameEnded = true;
-            Time.timeScale = 0f; // Pause game immediately
+            Time.timeScale = 0f;
             AudioManager.Instance.ToggleMusic();
             ShopUI.Instance.SetHidden(true);
             PlayerController.Instance.SetPickedCursor(PlayerController.CursorState.Default, null, null);
 
-            if (debtRemaining <= 0)
+            if (win)
             {
-                // --- SUCCESS ---
                 _didWin = true;
-                if (_successDialogue != null)
-                {
-                    _successDialogue.StartDialogue();
-                }
-                else
-                {
-                    OnDialogueFinished(); // Skip straight to popup if no dialogue
-                }
+                if (_successDialogue != null) _successDialogue.StartDialogue();
+                else OnDialogueFinished();
             }
             else
             {
-                // --- FAILURE ---
                 _didWin = false;
                 AudioManager.Instance.PlaySFX("gameOver");
-                if (_failedDialogue != null)
-                {
-                    _failedDialogue.StartDialogue();
-                }
-                else
-                {
-                    OnDialogueFinished(); // Skip straight to popup if no dialogue
-                }
+                if (_failedDialogue != null) _failedDialogue.StartDialogue();
+                else OnDialogueFinished();
             }
         }
 
-        // --- This triggers the "Level Completed" Popup ---
         public void OnDialogueFinished()
         {
-            // Gather stats
             int debtLeft = Math.Max(0, _quota - _currentQuotaPayment);
             int harvestCount = InventoryManager.Instance.TotalHarvestedCount;
             float totalTimeForWeek = _dayTime * 7;
             float timeRemaining = _timeLeft;
 
-            // Show Popup
             Debug.Log($"POPUP DATA -> Win:{_didWin}, Debt:{debtLeft}, Harvest:{harvestCount}, Time:{timeRemaining}");
 
-            // 3. Show Popup
             if (_levelPopup != null)
             {
                 _levelPopup.ShowPopup(

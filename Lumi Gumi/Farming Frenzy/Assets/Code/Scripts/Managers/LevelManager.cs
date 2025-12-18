@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     #region Properties
+
+    [Tooltip("The number of level in progress (Not null/0)")] public int levelNumber;
     #endregion
 
     #region Methods

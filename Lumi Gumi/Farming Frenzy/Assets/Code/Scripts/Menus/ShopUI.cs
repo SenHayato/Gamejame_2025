@@ -1,3 +1,4 @@
+using System; // Added for [Serializable]
 using System.Collections.Generic;
 using System.Linq;
 using Code.GrowthRateExtension;
@@ -12,16 +13,37 @@ namespace Code.Scripts.Menus
 {
     public class ShopUI : MonoBehaviour
     {
+        // --- NEW: Helper struct for Inspector configuration ---
+        [Serializable]
+        public struct LevelShopConfig
+        {
+            public int levelNumber;
+            public List<string> plants;
+        }
+
+        [Header("Shop Configuration")]
+        [Tooltip("Define specific plant lists for specific levels here.")]
+        [SerializeField] private List<LevelShopConfig> _levelSpecificPlants;
+
+        [Tooltip("The list of plants to show if the current level is not found in the list above.")]
+        [SerializeField] private List<string> _defaultPlants;
+        // -----------------------------------------------------
+
         private VisualTreeAsset _itemTemplate;
         private VisualTreeAsset _itemTooltipTemplate;
         private ShopContainerTooltipManipulator _tooltipManipulator;
         private VisualElement _root;
+        public LevelManager levelManager;
         public bool MouseInShop => _tooltipManipulator.MouseInShop;
 
         private static ShopUI _instance;
         public static ShopUI Instance => _instance ??= GameObject.Find("Shop").GetComponent<ShopUI>();
         [CanBeNull] public VisualElement lastSelectedItem;
 
+        private void Awake()
+        {
+            levelManager = FindFirstObjectByType<LevelManager>();
+        }
         private void Start()
         {
             InitShop();
@@ -41,23 +63,29 @@ namespace Code.Scripts.Menus
             _root.AddManipulator(_tooltipManipulator);
 
             var defaultSprite = Resources.Load<Sprite>("Placeholder");
-            
-            var plants = new List<string> //Ngatur banyak list tanaman dalam shop
-            {
-                // Tier 1
-                "Tomato", "Corn",// "Clover", "Blister Berry",
-                
-                // Tier 2
-                 "Beans", //"Shrub Rose","Pumpkin", // "Scarecrow", "Marigold", "Banana",
 
-                // Tier 3
-                 "Chili", // "Cauli",
-            };
+            List<string> plants;
+
+            // --- REPLACED HARDCODED LOGIC ---
+            // 1. Try to find a config that matches the current level number
+            var config = _levelSpecificPlants.FirstOrDefault(x => x.levelNumber == levelManager.levelNumber);
+
+            // 2. If found and has plants, use it. Otherwise, use default.
+            if (config.plants != null && config.plants.Count > 0)
+            {
+                plants = config.plants;
+            }
+            else
+            {
+                plants = _defaultPlants;
+            }
+            // --------------------------------
 
             foreach (var plant in plants)
             {
                 AddShopItem(Resources.Load<PlantData>(plant), defaultSprite);
             }
+
 
             Resources.UnloadUnusedAssets();
             PlayerController.Instance.RefreshMoney();
