@@ -17193,12 +17193,16 @@ PrefabInstance:
       objectReference: {fileID: 6482053202644296819, guid: a175a599898013d489d4a2d08441e9fd, type: 3}
     - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: _spawnInterval
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: _spawnPositions
       value: 
       objectReference: {fileID: 762213175}
+    - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
+      propertyPath: _enemiesPerSpawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3622436397868480421, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
