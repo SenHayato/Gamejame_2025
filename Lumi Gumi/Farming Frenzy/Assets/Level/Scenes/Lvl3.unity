@@ -654,11 +654,11 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -26.87
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -32026,6 +32026,7 @@ MonoBehaviour:
   _quotaText: {fileID: 1046242554}
   _quotaPayText: {fileID: 747076677}
   _objectivesText: {fileID: 80559719}
+  _daysInLevel: 9
   _quotaButton: {fileID: 411537117}
   _clockHand: {fileID: 1317451540}
   _dayNightAnimator: {fileID: 697990103}
@@ -32033,7 +32034,7 @@ MonoBehaviour:
   _floatingTextPrefab: {fileID: 7044524255995285942, guid: 5bb772986ba87219e83c41ba410f0301, type: 3}
   _quota: 500
   _quotaIncreaseRate: 2
-  _timerRate: 80
+  _timerRate: 60
   _dayTime: 120
   _enemyDifficulty: 15
   _enemySpawnFrequency: 10
@@ -32043,6 +32044,14 @@ MonoBehaviour:
     type: 0
     currentAmount: 0
   - plantName: Tomato
+    targetAmount: 8
+    type: 1
+    currentAmount: 0
+  - plantName: Corn
+    targetAmount: 1
+    type: 0
+    currentAmount: 0
+  - plantName: Corn
     targetAmount: 2
     type: 1
     currentAmount: 0

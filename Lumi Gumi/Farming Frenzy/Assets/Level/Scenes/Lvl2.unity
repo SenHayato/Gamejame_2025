@@ -20584,7 +20584,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -30203,7 +30203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundSprite: {fileID: 1127701438, guid: fbe97388bbd0efd429abe88df1b592f6, type: 3}
-  _money: 90
+  _money: 50
   SprayPurchaseAmount: 0
   _defaultCursor: {fileID: 2800000, guid: 66e5982836af98742a2ca5ce059ef25b, type: 3}
   _wateringCanCursor: {fileID: 2800000, guid: 5a8008e1e5bfe604db4904672d8a8ffe, type: 3}
@@ -32026,6 +32026,7 @@ MonoBehaviour:
   _quotaText: {fileID: 1046242554}
   _quotaPayText: {fileID: 747076677}
   _objectivesText: {fileID: 994707670}
+  _daysInLevel: 6
   _quotaButton: {fileID: 411537117}
   _clockHand: {fileID: 1317451540}
   _dayNightAnimator: {fileID: 697990103}
@@ -32034,13 +32035,17 @@ MonoBehaviour:
   _quota: 250
   _quotaIncreaseRate: 2
   _timerRate: 40
-  _dayTime: 60
+  _dayTime: 120
   _enemyDifficulty: 10
-  _enemySpawnFrequency: 7
+  _enemySpawnFrequency: 1
   _levelObjectives:
-  - plantName: 
-    targetAmount: 0
+  - plantName: Chili
+    targetAmount: 2
     type: 0
+    currentAmount: 0
+  - plantName: Chili
+    targetAmount: 2
+    type: 1
     currentAmount: 0
   _successDialogue: {fileID: 390658846}
   _failedDialogue: {fileID: 704034586}

@@ -59,6 +59,9 @@ namespace Code.Scripts.Managers
         // --- NEW: Text to display objectives ---
         [SerializeField] private TextMeshProUGUI _objectivesText;
 
+        [Tooltip("How many days does this level last? (e.g. 3)")]
+        [SerializeField] private int _daysInLevel = 7;
+
         [SerializeField] private GameObject _quotaButton;
         [SerializeField] private Image _clockHand;
         [SerializeField] private Animator _dayNightAnimator;
@@ -120,7 +123,7 @@ namespace Code.Scripts.Managers
             EnemySpawnManager.Instance.Restart();
             PlantManager.Instance._camera = Camera.main;
             IsTimerRunning = true;
-            _timeLeft = _dayTime * 7;
+            _timeLeft = _dayTime * _daysInLevel;
             SetupQuotaText();
             _goats = 0;
             _quotaClose = false;
@@ -129,7 +132,7 @@ namespace Code.Scripts.Managers
             _playFirstClockSound = false;
             _playSecondClockSound = false;
             ShopUI.Instance.SetHidden(false);
-
+            
             // Reset Objectives
             foreach (var obj in _levelObjectives)
             {
