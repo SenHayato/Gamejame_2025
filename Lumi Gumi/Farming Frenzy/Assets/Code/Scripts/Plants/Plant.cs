@@ -84,7 +84,7 @@ namespace Code.Scripts.Plants
         {
             _playerController = FindFirstObjectByType<PlayerController>();
             transform.position = new(transform.position.x, transform.position.y, -0.5f);
-            transform.rotation = Quaternion.Euler(-60f, 0f, 0f);
+            transform.rotation = Quaternion.Euler(-20f, 0f, 0f);
         }
 
         private void Update()

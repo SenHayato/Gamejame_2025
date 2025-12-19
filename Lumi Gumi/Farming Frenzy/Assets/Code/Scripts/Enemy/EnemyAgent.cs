@@ -61,7 +61,7 @@ namespace Code.Scripts.Enemy
         
         private void Start()
         {
-            transform.rotation = Quaternion.Euler(-60f,0f,0f);
+            transform.rotation = Quaternion.Euler(-20f,0f,0f);
 
             _audioManager = AudioManager.Instance;
             _gameManager = GameObject.Find("[GameManager]").GetComponent<GameManager>();

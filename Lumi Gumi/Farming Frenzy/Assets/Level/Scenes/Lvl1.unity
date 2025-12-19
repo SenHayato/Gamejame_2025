@@ -13621,13 +13621,13 @@ MonoBehaviour:
   interactIndicator: {fileID: 0}
   dialogueLines:
   - speakerName: Debt Collector
-    dialogueText: Good... i didnt expect you would be able to fulfill the debt you
-      owned.
+    dialogueText: Ha! Thou hast fulfilled my demand this time. Beware, for I shall
+      return anon to claim yet more.
     speakerImageA: {fileID: 0}
     speakerImageB: {fileID: -2651458684260046897, guid: 43a4038b50ad3b84ca2105d454d53127, type: 3}
     isSpeakerAActive: 0
   - speakerName: Debt Collector
-    dialogueText: I will return to take my parts.
+    dialogueText: "Hahaha\u2026 till next we meet, little farmer."
     speakerImageA: {fileID: 0}
     speakerImageB: {fileID: -2651458684260046897, guid: 43a4038b50ad3b84ca2105d454d53127, type: 3}
     isSpeakerAActive: 0
@@ -16052,6 +16052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navmesh
       objectReference: {fileID: 0}
+    - target: {fileID: 1355841292401933756, guid: 000d20937eb8c134c9e0ad7c38d570e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4440481991812110326, guid: 000d20937eb8c134c9e0ad7c38d570e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16540,12 +16544,12 @@ MonoBehaviour:
   interactIndicator: {fileID: 0}
   dialogueLines:
   - speakerName: Debt Collector
-    dialogueText: Looks like you do not possess enough wealth to pay your debt.
+    dialogueText: It seemeth thou canst not meet my demand.
     speakerImageA: {fileID: 0}
     speakerImageB: {fileID: -2651458684260046897, guid: 43a4038b50ad3b84ca2105d454d53127, type: 3}
     isSpeakerAActive: 0
   - speakerName: Debt Collector
-    dialogueText: Now, Suffer the consequences!
+    dialogueText: "Therefore, thou shalt now follow me\u2026 and face what awaiteth."
     speakerImageA: {fileID: 0}
     speakerImageB: {fileID: -2651458684260046897, guid: 43a4038b50ad3b84ca2105d454d53127, type: 3}
     isSpeakerAActive: 0
@@ -17367,6 +17371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawnPositions
       objectReference: {fileID: 0}
+    - target: {fileID: 8457346541727673146, guid: 53225168ad3e1884f8f9beabb9e6aae0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -17897,6 +17905,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2076072451}
+        m_TargetAssemblyTypeName: Code.Scripts.Managers.GameManager, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &813101604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21663,19 +21683,20 @@ MonoBehaviour:
   interactIndicator: {fileID: 0}
   dialogueLines:
   - speakerName: Debt Collector
-    dialogueText: 'Hey brat, have your debt paid or suffer the consequences '
+    dialogueText: Ho there, Poor farmer. Settle thy debt at once, lest ye learn the
+      harsh cost of delay.
     speakerImageA: {fileID: 0}
     speakerImageB: {fileID: -2651458684260046897, guid: 43a4038b50ad3b84ca2105d454d53127, type: 3}
     isSpeakerAActive: 0
   - speakerName: Annecat
-    dialogueText: I'm sorry, i don't have enough money for it. Please give me some
-      more time.
+    dialogueText: Good sir, I possess no coin as of yet, and my fields lie troubled.
+      The harvest waneth poor.
     speakerImageA: {fileID: 7152930139536384079, guid: 36b8674ca54b1704590a3bbb8c432f99, type: 3}
     speakerImageB: {fileID: 0}
     isSpeakerAActive: 1
   - speakerName: Debt Collector
-    dialogueText: Enough of your excuses. I'll only be giving you some spare amount
-      of days or else, I would eat you.
+    dialogueText: Speak not of woes to mine ears. I shall return ere a few days pass.
+      If thy debt remain unpaid, thou shalt learn thy lesson the hard way.
     speakerImageA: {fileID: 0}
     speakerImageB: {fileID: -2651458684260046897, guid: 43a4038b50ad3b84ca2105d454d53127, type: 3}
     isSpeakerAActive: 0
@@ -29982,19 +30003,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d216562b57f67a9468ce270f00b3fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicSounds: []
+  _musicSounds:
+  - {fileID: 8300000, guid: df22fb5f12e13194f90bde3e19ad14b6, type: 3}
   _sfxSounds:
   - {fileID: 8300000, guid: 1d3eb7a10803dca4f8141e3940a40d4b, type: 3}
   - {fileID: 8300000, guid: f39f3c6d74ff8d74788ebf07ddc6592a, type: 3}
   - {fileID: 8300000, guid: 538426d1a4a3eac4d9efdec27e015397, type: 3}
   - {fileID: 8300000, guid: 376e3322d48c96243a697da76ade2f4a, type: 3}
   - {fileID: 8300000, guid: e877ef0989bbe9e46baa3700a0f00c68, type: 3}
-  - {fileID: 8300000, guid: a891b990980f7164a93fd0b2c6618a08, type: 3}
-  - {fileID: 8300000, guid: f2c33495413def5478bc8759b985b4bd, type: 3}
-  - {fileID: 8300000, guid: c1732ea398b979945adeee38b0f8f4ae, type: 3}
-  - {fileID: 8300000, guid: 5f37caa2c0ae6784a993d7fac6efce54, type: 3}
-  - {fileID: 8300000, guid: a23d5d50eea2ca349b4c7f8c7c573f9f, type: 3}
-  - {fileID: 8300000, guid: 75c0ea74183e2ba47a266b4f82482b10, type: 3}
+  - {fileID: 8300000, guid: d11526f6e69fe15478aa698011ceb7b0, type: 3}
+  - {fileID: 8300000, guid: 4ab2907fa4867374bafba92147223602, type: 3}
+  - {fileID: 8300000, guid: 8f9ae6cab69776b48957aee991004100, type: 3}
+  - {fileID: 8300000, guid: e63da6ec9aded5e48998f25226f2a67c, type: 3}
+  - {fileID: 8300000, guid: 0ef35d36ea8ac734da3493efb44efd6a, type: 3}
+  - {fileID: 8300000, guid: a988404b6d28c3e43a2c83b081062dfd, type: 3}
   - {fileID: 8300000, guid: f65b702a7358f954689de8dcfae60f9d, type: 3}
   - {fileID: 8300000, guid: a70a0297fa3be96979d8409936025780, type: 3}
   - {fileID: 8300000, guid: 96ac0d49f9f9bc044b73c3c0a82cac25, type: 3}
@@ -30343,7 +30365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundSprite: {fileID: 1127701438, guid: fbe97388bbd0efd429abe88df1b592f6, type: 3}
-  _money: 90
+  _money: 20
   SprayPurchaseAmount: 0
   _defaultCursor: {fileID: 2800000, guid: 66e5982836af98742a2ca5ce059ef25b, type: 3}
   _wateringCanCursor: {fileID: 2800000, guid: 5a8008e1e5bfe604db4904672d8a8ffe, type: 3}
@@ -33282,11 +33304,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1099713604265423174, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2415654360609274492, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
       propertyPath: m_text
       value: Beans & Debt
+      objectReference: {fileID: 0}
+    - target: {fileID: 3088122690769597280, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3397608531386769122, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -33300,6 +33326,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 509353602}
+    - target: {fileID: 3397608531386769122, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5280547979951288982, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -33382,6 +33412,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6044711451787408063, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196940695481697349, guid: 097e2672ed233144bb116e2bb6dc76f4, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

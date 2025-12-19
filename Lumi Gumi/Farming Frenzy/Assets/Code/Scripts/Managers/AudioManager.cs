@@ -115,7 +115,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Sound Not Found");
             return;
         }
-        _musicSource.PlayOneShot(sound);
+        _musicSource.clip = sound;
+        _musicSource.loop = true;
+        _musicSource.Play();
     }
 
     public void ButtonSFX()

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic; // Required for List
+using System.Collections;
 using System.Linq;
 using Code.Scripts.Player;
 using Code.Scripts.GridSystem;
@@ -78,9 +79,10 @@ namespace Code.Scripts.Managers
 
         // --- NEW: List of Objectives ---
         [Header("Level Objectives")]
+        [SerializeField]
         public List<LevelObjective> _levelObjectives; // Use (+) in Inspector to add
         // -------------------------------
-
+       // [SerializeField] private bool _showTutorialOnStart = false;
         [Header("Events & UI")]
         [SerializeField] private NPCInteraction _successDialogue;
         [SerializeField] private NPCInteraction _failedDialogue;
@@ -152,15 +154,23 @@ namespace Code.Scripts.Managers
                 _failedDialogue.onDialogueFinished.AddListener(OnDialogueFinished);
             }
 
-            if (AudioManager.Instance.gameStart)
+            if (AudioManager.Instance != null && AudioManager.Instance.gameStart)
             {
-                print("Tut opened");
-                PauseGame();
-                OpenTutorial();
+                // Start Coroutine to wait slightly
+                //StartCoroutine(OpenTutorialWithDelay());
+                AudioManager.Instance.gameStart = false;
             }
-            AudioManager.Instance.gameStart = false;
         }
 
+        private IEnumerator OpenTutorialWithDelay()
+        {
+            // Wait 0.2 seconds before pausing and showing tutorial
+            yield return new WaitForSeconds(0.2f);
+
+            print("Tut opened with delay");
+            PauseGame(); // Pause logic
+            OpenTutorial(); // Open the Help/Tutorial Menu
+        }
         private void Awake()
         {
             if (Instance == null) Instance = this;
@@ -349,7 +359,8 @@ namespace Code.Scripts.Managers
         {
             _pauseBaseMenu.gameObject.SetActive(false);
             _helpMenu.gameObject.SetActive(true);
-            _shopMenu.gameObject.SetActive(false);
+            Time.timeScale = 0f;
+           //) _shopMenu.gameObject.SetActive(false);
         }
 
         public void ResumeGame()
