@@ -24,10 +24,12 @@ MonoBehaviour:
   _cannotHarvest: 0
   _goldGenerationFactor: 1
   _dryoutRate: 0
-  _maturationCycle: 6
-  _fruitingCycle: 7
+  _maturationCycle: 30
+  _fruitingCycle: 1
   flavorText: A versatile early-game crop
   power: 1
+  _maxYield: 2
+  _yieldGenerationRate: 30
   _tier: 1
   _price: 50
   _goldGenerated: 75

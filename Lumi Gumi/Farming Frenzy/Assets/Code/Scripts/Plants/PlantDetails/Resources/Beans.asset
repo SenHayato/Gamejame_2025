@@ -24,10 +24,12 @@ MonoBehaviour:
   _cannotHarvest: 0
   _goldGenerationFactor: 1
   _dryoutRate: 0
-  _maturationCycle: 10
-  _fruitingCycle: 12
-  flavorText: Endgame plant
+  _maturationCycle: 15
+  _fruitingCycle: 1
+  flavorText: Starter Plant!
   power: 1
+  _maxYield: 5
+  _yieldGenerationRate: 15
   _tier: 2
   _price: 10
   _goldGenerated: 15

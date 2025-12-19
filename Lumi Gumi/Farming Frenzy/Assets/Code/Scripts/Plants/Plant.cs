@@ -35,6 +35,11 @@ namespace Code.Scripts.Plants
         private GameObject _healthBar;
         private Slider hBarController;
         [SerializeField] PlayerController _playerController;
+
+        // --- NEW: Yield Tracking ---
+        private int _currentYield = 1;
+        // ---------------------------
+
         private int SecsToNextStage
         {
             get
@@ -43,6 +48,8 @@ namespace Code.Scripts.Plants
                 {
                     GrowthState.Seedling => Math.Max(0, (int)(_data._maturationCycle - _secsSinceGrowth)),
                     GrowthState.Mature => _data._cannotHarvest ? -1 : Math.Max(0, (int)((_data._fruitingCycle - _secsSinceGrowth) / _fruitingRate)),
+                    // Show yield progress if already fruited but not full
+                    GrowthState.Fruited => _currentYield < _data._maxYield ? Math.Max(0, (int)(_data._yieldGenerationRate - _secsSinceGrowth)) : 0,
                     _ => 0
                 };
             }
@@ -54,7 +61,10 @@ namespace Code.Scripts.Plants
 
         public string PlantName => _data.name;
 
-        public string StatusRichText => _state.StatusRichText(SecsToNextStage, _data._goldGenerated);
+        // Updated Status Text to show stack count
+        public string StatusRichText => _state == GrowthState.Fruited
+            ? $"Ready to harvest! <color=yellow>${_data._goldGenerated}\n({SecsToNextStage}s until next yield)\nYield: {_currentYield}/{_data._maxYield}"
+            : _state.StatusRichText(SecsToNextStage, _data._goldGenerated);
 
         public delegate void HoverInEvent(Plant plant);
 
@@ -142,6 +152,7 @@ namespace Code.Scripts.Plants
                 _data = pdata;
                 _state = GrowthState.Seedling;
                 _secsSinceGrowth = 0.0f;
+                _currentYield = 1; // Reset yield
                 Collider = GetComponent<BoxCollider2D>();
                 aoeCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
                 _health = pdata._health;
@@ -159,17 +170,15 @@ namespace Code.Scripts.Plants
                 _tile = tile;
                 _tile.HasPlant = true;
 
-                // --- NEW: Track Planting Objective ---
                 if (GameManager.Instance != null)
                 {
                     GameManager.Instance.OnPlantPlanted(_data.name);
                 }
-                // -------------------------------------
 
                 print($"Just placed a {PlantName} on {_tile.name} (hasPlant = {_tile.HasPlant})");
 
                 _plantSpriteRenderer.sprite = _data._maturationSprite.First();
-                GetComponent<SpriteRenderer>().sortingOrder = 10000 - Mathf.CeilToInt(gameObject.transform.position.y);
+                GetComponent<SpriteRenderer>().sortingOrder = 5000 - Mathf.CeilToInt(gameObject.transform.position.y);
             }
         }
 
@@ -210,11 +219,9 @@ namespace Code.Scripts.Plants
                         _plantSpriteRenderer.sprite = _data._maturationSprite[spriteIndex];
                     }
                     break;
+
                 case GrowthState.Mature:
-                    if (_data._cannotHarvest)
-                    {
-                        break;
-                    }
+                    if (_data._cannotHarvest) { break; }
 
                     _secsSinceGrowth += Time.deltaTime * _fruitingRate;
 
@@ -227,16 +234,30 @@ namespace Code.Scripts.Plants
                     {
                         _plantSpriteRenderer.sprite = _data._growthSprite[^1];
                         _state = GrowthState.Fruited;
+                        _currentYield = 1; // First fruit arrived
                         _secsSinceGrowth = 0;
                     }
                     break;
+
+                // --- NEW: Stacking Logic ---
+                case GrowthState.Fruited:
+                    // Only run timer if we haven't hit max stack yet
+                    if (_currentYield < _data._maxYield)
+                    {
+                        _secsSinceGrowth += Time.deltaTime; // Standard rate for stacking
+                        if (_secsSinceGrowth >= _data._yieldGenerationRate)
+                        {
+                            _currentYield++;
+                            _secsSinceGrowth = 0; // Reset for next fruit
+                            // Optional: Visual feedback (Shake?)
+                            // transform.DOShake... (if using DOTween)
+                        }
+                    }
+                    break;
+                // ---------------------------
+
                 case GrowthState.Harvested:
                     _state = GrowthState.Mature;
-                    break;
-                case GrowthState.Fruited when _secsSinceGrowth >= 3.0:
-                    break;
-                case GrowthState.Fruited:
-                    _secsSinceGrowth += Time.deltaTime;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -245,18 +266,24 @@ namespace Code.Scripts.Plants
 
         private void Harvest()
         {
-            InventoryManager.Instance.AddItem(_data.name);
+            // --- NEW: Add accumulated yield ---
+            InventoryManager.Instance.AddItem(_data.name, _currentYield);
 
-            // --- NEW: Track Harvest Objective ---
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.OnPlantHarvested(_data.name);
+                // Trigger objective for EACH item harvested? 
+                // Currently triggering once per harvest action, but adding loop to be safe:
+                for (int i = 0; i < _currentYield; i++)
+                {
+                    GameManager.Instance.OnPlantHarvested(_data.name);
+                }
             }
-            // ------------------------------------
+            // ----------------------------------
 
             _playerController.SpawnCoinSpark(transform.position, Quaternion.identity);
 
-            GameManager.Instance.ShowFloatingText($"+1 {_data.name}");
+            // Show total harvested
+            GameManager.Instance.ShowFloatingText($"+{_currentYield} {_data.name}");
         }
 
         private void DigPlant()

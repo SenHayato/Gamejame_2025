@@ -25,10 +25,12 @@ MonoBehaviour:
   _cannotHarvest: 0
   _goldGenerationFactor: 1
   _dryoutRate: 0
-  _maturationCycle: 6
-  _fruitingCycle: 7
-  flavorText: Doubles nearby defensive<br>plant damage
+  _maturationCycle: 20
+  _fruitingCycle: 1
+  flavorText: Might be a little bit "Spicy"
   power: 1
+  _maxYield: 3
+  _yieldGenerationRate: 29
   _tier: 3
   _price: 25
   _goldGenerated: 30

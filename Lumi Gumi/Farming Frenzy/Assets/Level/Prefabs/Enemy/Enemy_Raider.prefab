@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3280111761349776542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8163276909389261290}
   - component: {fileID: 6662518162528540734}
   - component: {fileID: 2063805615727112898}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 5505673698956198518}
   - component: {fileID: 5744669347487709590}
   - component: {fileID: 5573429761198316153}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4703835103982706236}
   - component: {fileID: 3367650850478725171}
   - component: {fileID: 7234581257309470940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1566082625298305977}
   - component: {fileID: 1700326476404457792}
   - component: {fileID: 2812926839211951501}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 5130436800176709787}
   - component: {fileID: 3050312483403444910}
   - component: {fileID: 799699647321094231}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7803935638698528372}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 2324444770818306414}
   - component: {fileID: 7630444465521351753}
   - component: {fileID: 8502111636678010476}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Raider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4629049501556285755, guid: f2f1d7d06edc3ed49b3f3d5ca428c258, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

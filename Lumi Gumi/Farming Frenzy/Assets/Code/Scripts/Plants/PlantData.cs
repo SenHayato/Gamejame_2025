@@ -17,39 +17,45 @@ public class PlantData : ScriptableObject
     public bool _cannotHarvest;
     public float _goldGenerationFactor = 1;
     public float _dryoutRate;
+
+    [Tooltip("Time (seconds) from Seedling to Mature")]
     public float _maturationCycle;
+
+    [Tooltip("Time (seconds) from Mature to First Fruit")]
     public float _fruitingCycle;
+
     public string flavorText;
     public PowerKind power;
 
-    [Range(1,3)]
+    [Header("Yield Settings")]
+    [Tooltip("Maximum items this plant can hold at once.")]
+    [Min(1)] public int _maxYield = 1;
+
+    [Tooltip("Seconds to generate ONE extra item after the first fruit appears.")]
+    public float _yieldGenerationRate = 5.0f;
+
+    [Range(1, 3)]
     public int _tier;
 
     public int _price;
     public int _goldGenerated;
     public float _health;
     public bool _indestructible;
-    
+
     public GrowthRate GrowthRateBand
     {
-        // Just some example values
-        get {
-            if (_maturationCycle <= 5)
-            {
-                return GrowthRate.Fast;
-            }
+        get
+        {
+            if (_maturationCycle <= 5) return GrowthRate.Fast;
             return _maturationCycle <= 15 ? GrowthRate.Medium : GrowthRate.Slow;
         }
     }
 
     public GrowthRate FruitingRateBand
     {
-        // Just some example values
-        get {
-            if (_fruitingCycle <= 10)
-            {
-                return GrowthRate.Fast;
-            }
+        get
+        {
+            if (_fruitingCycle <= 10) return GrowthRate.Fast;
             return _maturationCycle <= 15 ? GrowthRate.Medium : GrowthRate.Slow;
         }
     }

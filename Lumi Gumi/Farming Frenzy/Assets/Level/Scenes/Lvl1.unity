@@ -13436,7 +13436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c6e30b813e6204c8855a6fb8b59c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 0
+  levelNumber: 1
 --- !u!4 &383959666
 Transform:
   m_ObjectHideFlags: 0
@@ -17193,7 +17193,7 @@ PrefabInstance:
       objectReference: {fileID: 6482053202644296819, guid: a175a599898013d489d4a2d08441e9fd, type: 3}
     - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: _spawnInterval
-      value: 60
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2985821668485665439, guid: 30e82aa4757f55a4cb78a9ac958591ae, type: 3}
       propertyPath: _spawnPositions

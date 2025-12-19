@@ -25,10 +25,12 @@ MonoBehaviour:
   _cannotHarvest: 0
   _goldGenerationFactor: 1
   _dryoutRate: 0
-  _maturationCycle: 7
-  _fruitingCycle: 12
-  flavorText: Great planted together;<br>avoid planting alone!
+  _maturationCycle: 50
+  _fruitingCycle: 1
+  flavorText: Endgame Plant!
   power: 1
+  _maxYield: 1
+  _yieldGenerationRate: 5
   _tier: 1
   _price: 100
   _goldGenerated: 150
