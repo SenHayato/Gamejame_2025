@@ -29978,7 +29978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d216562b57f67a9468ce270f00b3fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicSounds: []
+  _musicSounds:
+  - {fileID: 8300000, guid: df22fb5f12e13194f90bde3e19ad14b6, type: 3}
   _sfxSounds:
   - {fileID: 8300000, guid: 1d3eb7a10803dca4f8141e3940a40d4b, type: 3}
   - {fileID: 8300000, guid: f39f3c6d74ff8d74788ebf07ddc6592a, type: 3}
